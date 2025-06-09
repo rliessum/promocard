@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create professional promo cards with Spotify's official design system. Upload your music, customize colors, and download high-quality promotional graphics.">
+    <meta name="keywords" content="spotify promo cards, music promotion, promotional graphics, spotify design, music marketing">
+    <meta name="author" content="Spotify Promo Cards">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://promocard.liessum.dev/">
+    <meta property="og:title" content="Spotify Promo Cards - Official Design Tool">
+    <meta property="og:description" content="Create stunning promotional cards for your music with Spotify's official design system and tools.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://promocard.liessum.dev/">
+    <meta property="twitter:title" content="Spotify Promo Cards - Official Design Tool">
+    <meta property="twitter:description" content="Create stunning promotional cards for your music with Spotify's official design system and tools.">
+    
+    <title>Spotify Promo Cards</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="output.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Circular:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-black text-white min-h-screen overflow-x-hidden" style="font-family: 'Circular', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;">
+
+    <!-- Spotify Header -->
+    <header class="bg-black border-b border-gray-800 sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#000000">
+                            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.839-.179-.899-.539-.061-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                        </svg>
+                    </div>
+                    <h1 class="text-2xl font-bold tracking-tight">Promo Cards</h1>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-sm font-medium text-white hover:text-gray-300 transition-colors">Gallery</a>
+                    <a href="#" class="text-sm font-medium text-gray-400 hover:text-white transition-colors">Templates</a>
+                    <a href="#" class="text-sm font-medium text-gray-400 hover:text-white transition-colors">Help</a>
+                </div>
+                
+                <!-- Actions -->
+                <div class="flex items-center space-x-4">
+                    <button id="shareBtn" class="hidden md:flex items-center px-4 py-2 text-sm font-medium text-white bg-gray-800 rounded-full hover:bg-gray-700 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+                            <polyline points="16 6 12 2 8 6"/>
+                            <line x1="12" y1="2" x2="12" y2="15"/>
+                        </svg>
+                        Share
+                    </button>
+                    <button id="downloadBtn" class="flex items-center px-6 py-2 text-sm font-bold text-black bg-white rounded-full hover:bg-gray-200 transition-all transform hover:scale-105">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        <span id="downloadBtnText">Download</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="bg-black min-h-screen">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-b from-gray-900 to-black">
+            <div class="max-w-screen-2xl mx-auto px-6 lg:px-8 pt-12 pb-8">
+                <div class="text-center mb-8">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight">
+                        Create stunning 
+                        <span class="bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">promo cards</span>
+                    </h1>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                        Design professional promotional graphics for your music with Spotify's official design system
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Editor Section -->
+        <section class="bg-black">
+            <div class="max-w-screen-2xl mx-auto px-6 lg:px-8 pb-20">
+                <div class="grid lg:grid-cols-5 gap-8">
+                    
+                    <!-- Controls Panel -->
+                    <div class="lg:col-span-2 space-y-6">
+                        <!-- Quick Actions -->
+                        <div class="bg-gray-900/30 rounded-2xl p-6">
+                            <div class="flex items-center justify-between mb-6">
+                                <h2 class="text-lg font-semibold">Quick Start</h2>
+                                <button id="resetBtn" class="text-gray-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-gray-800" title="Reset">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                                        <path d="M3 3v5h5"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            
+                            <!-- Templates -->
+                            <div class="grid grid-cols-3 gap-3 mb-6">
+                                <button class="template-btn aspect-square bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl p-4 text-white text-xs font-medium hover:scale-105 transition-transform">
+                                    Album Release
+                                </button>
+                                <button class="template-btn aspect-square bg-gradient-to-br from-green-500 to-teal-500 rounded-xl p-4 text-white text-xs font-medium hover:scale-105 transition-transform">
+                                    New Single
+                                </button>
+                                <button class="template-btn aspect-square bg-gradient-to-br from-orange-500 to-red-500 rounded-xl p-4 text-white text-xs font-medium hover:scale-105 transition-transform">
+                                    Tour Dates
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Text Content -->
+                        <div class="bg-gray-900/30 rounded-2xl p-6">
+                            <h3 class="text-lg font-semibold mb-4">Content</h3>
+                            
+                            <!-- Artist Name -->
+                            <div class="space-y-2 mb-4">
+                                <label for="artistName" class="block text-sm font-medium text-gray-300">Artist Name</label>
+                                <input type="text" id="artistName" value="Your Artist Name" 
+                                       class="w-full bg-gray-800/50 border border-gray-600 text-white rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all placeholder-gray-500"
+                                       placeholder="Enter artist name">
+                            </div>
+
+                            <!-- Song/Album Title -->
+                            <div class="space-y-2 mb-4">
+                                <label for="songTitle" class="block text-sm font-medium text-gray-300">Song/Album Title</label>
+                                <input type="text" id="songTitle" value="New Single" 
+                                       class="w-full bg-gray-800/50 border border-gray-600 text-white rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all placeholder-gray-500"
+                                       placeholder="Enter song or album title">
+                            </div>
+
+                            <!-- Subtitle -->
+                            <div class="space-y-2 mb-4">
+                                <label for="subtitle" class="block text-sm font-medium text-gray-300">Subtitle</label>
+                                <input type="text" id="subtitle" value="Out Now" 
+                                       class="w-full bg-gray-800/50 border border-gray-600 text-white rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all placeholder-gray-500"
+                                       placeholder="Out now, Available everywhere, etc.">
+                            </div>
+
+                            <!-- Image Upload -->
+                            <div class="space-y-2">
+                                <label class="block text-sm font-medium text-gray-300">Artwork</label>
+                                <div class="relative">
+                                    <input type="file" id="imageUpload" accept="image/*" class="hidden">
+                                    <label for="imageUpload" class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer hover:border-green-500 transition-colors bg-gray-800/30 hover:bg-gray-800/50">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 mb-2">
+                                            <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
+                                            <circle cx="12" cy="13" r="3"/>
+                                        </svg>
+                                        <span class="text-sm text-gray-400">Upload artwork</span>
+                                        <span class="text-xs text-gray-500 mt-1">JPG, PNG up to 10MB</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Style Controls -->
+                        <div class="bg-gray-900/30 rounded-2xl p-6">
+                            <h3 class="text-lg font-semibold mb-4">Style</h3>
+                            
+                            <!-- Color Palette -->
+                            <div class="space-y-3 mb-6">
+                                <label class="block text-sm font-medium text-gray-300">Color Palette</label>
+                                <div class="grid grid-cols-6 gap-2">
+                                    <button class="color-preset w-10 h-10 rounded-lg border-2 border-gray-600 hover:border-white transition-all ring-2 ring-white ring-offset-2 ring-offset-gray-900" style="background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);" data-color="#1DB954" title="Spotify Green"></button>
+                                    <button class="color-preset w-10 h-10 rounded-lg border-2 border-gray-600 hover:border-white transition-all" style="background: linear-gradient(135deg, #FF6B6B 0%, #ff5252 100%);" data-color="#FF6B6B" title="Coral Red"></button>
+                                    <button class="color-preset w-10 h-10 rounded-lg border-2 border-gray-600 hover:border-white transition-all" style="background: linear-gradient(135deg, #4ECDC4 0%, #26c6da 100%);" data-color="#4ECDC4" title="Turquoise"></button>
+                                    <button class="color-preset w-10 h-10 rounded-lg border-2 border-gray-600 hover:border-white transition-all" style="background: linear-gradient(135deg, #45B7D1 0%, #2196f3 100%);" data-color="#45B7D1" title="Sky Blue"></button>
+                                    <button class="color-preset w-10 h-10 rounded-lg border-2 border-gray-600 hover:border-white transition-all" style="background: linear-gradient(135deg, #96CEB4 0%, #4caf50 100%);" data-color="#96CEB4" title="Mint Green"></button>
+                                    <button class="color-preset w-10 h-10 rounded-lg border-2 border-gray-600 hover:border-white transition-all" style="background: linear-gradient(135deg, #FFEAA7 0%, #ffeb3b 100%);" data-color="#FFEAA7" title="Light Yellow"></button>
+                                    <button class="color-preset w-10 h-10 rounded-lg border-2 border-gray-600 hover:border-white transition-all" style="background: linear-gradient(135deg, #DDA0DD 0%, #e1bee7 100%);" data-color="#DDA0DD" title="Plum"></button>
+                                    <button class="color-preset w-10 h-10 rounded-lg border-2 border-gray-600 hover:border-white transition-all" style="background: linear-gradient(135deg, #98D8C8 0%, #80cbc4 100%);" data-color="#98D8C8" title="Mint"></button>
+                                    <button class="color-preset w-10 h-10 rounded-lg border-2 border-gray-600 hover:border-white transition-all" style="background: linear-gradient(135deg, #F7DC6F 0%, #ffc107 100%);" data-color="#F7DC6F" title="Golden"></button>
+                                    <button class="color-preset w-10 h-10 rounded-lg border-2 border-gray-600 hover:border-white transition-all" style="background: linear-gradient(135deg, #BB8FCE 0%, #ce93d8 100%);" data-color="#BB8FCE" title="Lavender"></button>
+                                    <button class="color-preset w-10 h-10 rounded-lg border-2 border-gray-600 hover:border-white transition-all" style="background: linear-gradient(135deg, #85C1E9 0%, #81d4fa 100%);" data-color="#85C1E9" title="Light Blue"></button>
+                                    <button class="color-preset w-10 h-10 rounded-lg border-2 border-gray-600 hover:border-white transition-all" style="background: linear-gradient(135deg, #F8C471 0%, #ffb74d 100%);" data-color="#F8C471" title="Peach"></button>
+                                </div>
+                            </div>
+
+                            <!-- Layout Options -->
+                            <div class="space-y-3 mb-6">
+                                <label class="block text-sm font-medium text-gray-300">Format</label>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <button id="aspectSquare" class="aspect-btn bg-green-600 border-2 border-green-500 text-white p-4 rounded-xl text-sm font-medium transition-all hover:bg-green-700 flex flex-col items-center">
+                                        <div class="w-8 h-8 bg-white/20 rounded mb-2"></div>
+                                        <span>Square</span>
+                                        <span class="text-xs opacity-75">1:1</span>
+                                    </button>
+                                    <button id="aspectStory" class="aspect-btn bg-gray-700 border-2 border-gray-600 text-white p-4 rounded-xl text-sm font-medium transition-all hover:bg-gray-600 flex flex-col items-center">
+                                        <div class="w-6 h-10 bg-white/20 rounded mb-2"></div>
+                                        <span>Story</span>
+                                        <span class="text-xs opacity-75">9:16</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Typography -->
+                            <div class="space-y-4">
+                                <label class="block text-sm font-medium text-gray-300">Typography</label>
+                                <div class="space-y-4">
+                                    <div>
+                                        <div class="flex justify-between items-center mb-2">
+                                            <label for="artistNameSize" class="text-xs text-gray-400">Artist Name Size</label>
+                                            <span id="artistNameSizeValue" class="text-xs text-green-400 font-mono">24px</span>
+                                        </div>
+                                        <input type="range" id="artistNameSize" min="16" max="48" value="24" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer slider">
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between items-center mb-2">
+                                            <label for="titleSize" class="text-xs text-gray-400">Title Size</label>
+                                            <span id="titleSizeValue" class="text-xs text-green-400 font-mono">20px</span>
+                                        </div>
+                                        <input type="range" id="titleSize" min="14" max="32" value="20" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer slider">
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between items-center mb-2">
+                                            <label for="subtitleSize" class="text-xs text-gray-400">Subtitle Size</label>
+                                            <span id="subtitleSizeValue" class="text-xs text-green-400 font-mono">14px</span>
+                                        </div>
+                                        <input type="range" id="subtitleSize" min="10" max="24" value="14" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer slider">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Export Options -->
+                        <div class="bg-gray-900/30 rounded-2xl p-6">
+                            <h3 class="text-lg font-semibold mb-4">Export</h3>
+                            
+                            <!-- Format Selection -->
+                            <div class="space-y-3 mb-4">
+                                <label class="block text-sm font-medium text-gray-300">Format</label>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <button id="formatPNG" class="format-btn bg-green-600 border border-green-500 text-white p-3 rounded-lg text-sm font-medium transition-all">PNG</button>
+                                    <button id="formatJPG" class="format-btn bg-gray-700 border border-gray-600 text-white p-3 rounded-lg text-sm font-medium transition-all hover:bg-gray-600">JPG</button>
+                                    <button id="formatWEBP" class="format-btn bg-gray-700 border border-gray-600 text-white p-3 rounded-lg text-sm font-medium transition-all hover:bg-gray-600">WEBP</button>
+                                </div>
+                            </div>
+
+                            <!-- Social Media Presets -->
+                            <div class="space-y-3">
+                                <label class="block text-sm font-medium text-gray-300">Social Media</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button id="instagramBtn" class="social-btn bg-gradient-to-br from-purple-500 to-pink-500 text-white p-3 rounded-lg text-sm font-medium transition-all hover:scale-105">
+                                        Instagram Post
+                                    </button>
+                                    <button id="storyBtn" class="social-btn bg-gradient-to-br from-purple-500 to-indigo-500 text-white p-3 rounded-lg text-sm font-medium transition-all hover:scale-105">
+                                        Instagram Story
+                                    </button>
+                                    <button id="twitterBtn" class="social-btn bg-blue-500 text-white p-3 rounded-lg text-sm font-medium transition-all hover:scale-105">
+                                        Twitter Post
+                                    </button>
+                                    <button id="facebookBtn" class="social-btn bg-blue-600 text-white p-3 rounded-lg text-sm font-medium transition-all hover:scale-105">
+                                        Facebook Post
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Preview Section -->
+                    <div class="lg:col-span-3 flex items-center justify-center">
+                        <div class="w-full max-w-md">
+                            <div id="cardPreviewWrapper" class="w-full">
+                                <div id="promoCard" class="aspect-square w-full rounded-2xl shadow-2xl p-8 flex flex-col justify-between transition-all duration-300" style="background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);">
+                                    
+                                    <!-- Header with Spotify Logo -->
+                                    <div class="flex justify-between items-start mb-6">
+                                        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#000000">
+                                                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.839-.179-.899-.539-.061-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="text-white/80 text-sm font-medium">Now Playing</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Main Content -->
+                                    <div class="flex-grow flex items-center justify-center">
+                                        <div class="text-center">
+                                            <!-- Artwork -->
+                                            <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-xl shadow-lg mb-6 mx-auto overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20">
+                                                <img id="previewImage" src="https://placehold.co/400x400/222/FFF?text=ALBUM" alt="Album Art" class="w-full h-full object-cover">
+                                            </div>
+                                            
+                                            <!-- Text Content -->
+                                            <h1 id="previewArtistName" class="text-2xl font-bold text-white mb-2" style="font-family: 'Circular', sans-serif;">Your Artist Name</h1>
+                                            <h2 id="previewSongTitle" class="text-lg font-semibold text-white/90 mb-1">New Single</h2>
+                                            <p id="previewSubtitle" class="text-sm text-white/70 font-medium">Out Now</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Player Controls -->
+                                    <div class="flex justify-center items-center space-x-4 mt-6">
+                                        <button class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="white">
+                                                <polygon points="19 20 9 12 19 4 19 20"></polygon>
+                                                <line x1="5" y1="19" x2="5" y2="5" stroke="white" stroke-width="2"></line>
+                                            </svg>
+                                        </button>
+                                        <button class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000">
+                                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                            </svg>
+                                        </button>
+                                        <button class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="white">
+                                                <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                                                <line x1="19" y1="5" x2="19" y2="19" stroke="white" stroke-width="2"></line>
+                                            </svg>
+                                        </button>
+                                    </div>
+
+                                    <!-- Progress Bar -->
+                                    <div class="mt-4">
+                                        <div class="flex justify-between text-xs text-white/60 mb-1">
+                                            <span>1:23</span>
+                                            <span>3:45</span>
+                                        </div>
+                                        <div class="w-full bg-white/20 rounded-full h-1">
+                                            <div class="bg-white h-1 rounded-full" style="width: 35%"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Bottom Branding -->
+                                    <div class="text-center mt-6">
+                                        <div class="text-white/60 text-xs font-medium">Listen on</div>
+                                        <div class="flex items-center justify-center mt-1">
+                                            <div class="w-4 h-4 bg-white rounded-full flex items-center justify-center mr-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="#000000">
+                                                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.839-.179-.899-.539-.061-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                                                </svg>
+                                            </div>
+                                            <span class="text-white text-sm font-bold">Spotify</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Loading Indicator -->
+                            <div id="loadingIndicator" class="hidden items-center justify-center flex-col py-20">
+                                <div class="w-8 h-8 border-4 border-gray-600 border-t-green-500 rounded-full animate-spin mb-4"></div>
+                                <p class="text-gray-400 text-sm">Generating your promo card...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="hidden fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50 transition-all duration-300">
+        <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span id="toastMessage">Card downloaded successfully!</span>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all interactive elements
+            const artistNameInput = document.getElementById('artistName');
+            const songTitleInput = document.getElementById('songTitle');
+            const subtitleInput = document.getElementById('subtitle');
+            const imageUpload = document.getElementById('imageUpload');
+            const downloadBtn = document.getElementById('downloadBtn');
+            
+            // New controls
+            const colorPresets = document.querySelectorAll('.color-preset');
+            const artistNameSize = document.getElementById('artistNameSize');
+            const titleSize = document.getElementById('titleSize');
+            const subtitleSize = document.getElementById('subtitleSize');
+            const artistNameSizeValue = document.getElementById('artistNameSizeValue');
+            const titleSizeValue = document.getElementById('titleSizeValue');
+            const subtitleSizeValue = document.getElementById('subtitleSizeValue');
+            
+            // Export controls
+            const formatBtns = document.querySelectorAll('.format-btn');
+            const aspectBtns = document.querySelectorAll('.aspect-btn');
+            
+            // State variables
+            let currentFormat = 'png';
+            let currentScale = 2;
+
+            // Get all preview elements
+            const promoCard = document.getElementById('promoCard');
+            const previewImage = document.getElementById('previewImage');
+            const previewArtistName = document.getElementById('previewArtistName');
+            const previewSongTitle = document.getElementById('previewSongTitle');
+            const previewSubtitle = document.getElementById('previewSubtitle');
+            const cardPreviewWrapper = document.getElementById('cardPreviewWrapper');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            const downloadBtnText = document.getElementById('downloadBtnText');
+            const resetBtn = document.getElementById('resetBtn');
+
+            // --- EVENT LISTENERS ---
+
+            // Update artist name
+            artistNameInput.addEventListener('input', (e) => {
+                previewArtistName.textContent = e.target.value;
+                saveState();
+            });
+
+            // Update song title
+            songTitleInput.addEventListener('input', (e) => {
+                previewSongTitle.textContent = e.target.value;
+                saveState();
+            });
+
+            // Update subtitle
+            subtitleInput.addEventListener('input', (e) => {
+                previewSubtitle.textContent = e.target.value;
+                saveState();
+            });
+
+            // Color preset functionality
+            colorPresets.forEach(preset => {
+                preset.addEventListener('click', () => {
+                    const color = preset.dataset.color;
+                    
+                    // Update background with gradient
+                    if (color === '#1DB954') {
+                        promoCard.style.background = 'linear-gradient(135deg, #1DB954 0%, #1ed760 100%)';
+                    } else if (color === '#FF6B6B') {
+                        promoCard.style.background = 'linear-gradient(135deg, #FF6B6B 0%, #ff5252 100%)';
+                    } else if (color === '#4ECDC4') {
+                        promoCard.style.background = 'linear-gradient(135deg, #4ECDC4 0%, #26c6da 100%)';
+                    } else if (color === '#45B7D1') {
+                        promoCard.style.background = 'linear-gradient(135deg, #45B7D1 0%, #2196f3 100%)';
+                    } else if (color === '#96CEB4') {
+                        promoCard.style.background = 'linear-gradient(135deg, #96CEB4 0%, #4caf50 100%)';
+                    } else if (color === '#FFEAA7') {
+                        promoCard.style.background = 'linear-gradient(135deg, #FFEAA7 0%, #ffeb3b 100%)';
+                    } else if (color === '#DDA0DD') {
+                        promoCard.style.background = 'linear-gradient(135deg, #DDA0DD 0%, #e1bee7 100%)';
+                    } else if (color === '#98D8C8') {
+                        promoCard.style.background = 'linear-gradient(135deg, #98D8C8 0%, #80cbc4 100%)';
+                    } else if (color === '#F7DC6F') {
+                        promoCard.style.background = 'linear-gradient(135deg, #F7DC6F 0%, #ffc107 100%)';
+                    } else if (color === '#BB8FCE') {
+                        promoCard.style.background = 'linear-gradient(135deg, #BB8FCE 0%, #ce93d8 100%)';
+                    } else if (color === '#85C1E9') {
+                        promoCard.style.background = 'linear-gradient(135deg, #85C1E9 0%, #81d4fa 100%)';
+                    } else if (color === '#F8C471') {
+                        promoCard.style.background = 'linear-gradient(135deg, #F8C471 0%, #ffb74d 100%)';
+                    } else {
+                        promoCard.style.backgroundColor = color;
+                    }
+                    
+                    // Visual feedback
+                    colorPresets.forEach(p => p.classList.remove('ring-2', 'ring-white', 'ring-offset-2', 'ring-offset-gray-900'));
+                    preset.classList.add('ring-2', 'ring-white', 'ring-offset-2', 'ring-offset-gray-900');
+                    saveState();
+                });
+            });
+
+            // Font size controls
+            artistNameSize.addEventListener('input', (e) => {
+                const size = e.target.value;
+                previewArtistName.style.fontSize = size + 'px';
+                artistNameSizeValue.textContent = size + 'px';
+                saveState();
+            });
+
+            titleSize.addEventListener('input', (e) => {
+                const size = e.target.value;
+                previewSongTitle.style.fontSize = size + 'px';
+                titleSizeValue.textContent = size + 'px';
+                saveState();
+            });
+
+            subtitleSize.addEventListener('input', (e) => {
+                const size = e.target.value;
+                previewSubtitle.style.fontSize = size + 'px';
+                subtitleSizeValue.textContent = size + 'px';
+                saveState();
+            });
+
+            // Aspect ratio controls
+            aspectBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active state from all buttons
+                    aspectBtns.forEach(b => {
+                        b.classList.remove('bg-green-600', 'border-green-500');
+                        b.classList.add('bg-gray-700', 'border-gray-600');
+                    });
+                    
+                    // Add active state to clicked button
+                    btn.classList.remove('bg-gray-700', 'border-gray-600');
+                    btn.classList.add('bg-green-600', 'border-green-500');
+                    
+                    // Update card aspect ratio
+                    if (btn.id === 'aspectSquare') {
+                        promoCard.classList.remove('aspect-[9/16]');
+                        promoCard.classList.add('aspect-square');
+                    } else if (btn.id === 'aspectStory') {
+                        promoCard.classList.remove('aspect-square');
+                        promoCard.classList.add('aspect-[9/16]');
+                    }
+                    saveState();
+                });
+            });
+
+            // Format selection
+            formatBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active state from all buttons
+                    formatBtns.forEach(b => {
+                        b.classList.remove('bg-green-600', 'border-green-500');
+                        b.classList.add('bg-gray-700', 'border-gray-600');
+                    });
+                    
+                    // Add active state to clicked button
+                    btn.classList.remove('bg-gray-700', 'border-gray-600');
+                    btn.classList.add('bg-green-600', 'border-green-500');
+                    
+                    // Update current format
+                    currentFormat = btn.id.replace('format', '').toLowerCase();
+                    saveState();
+                });
+            });
+
+            // Update image
+            imageUpload.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (event) => {
+                        previewImage.src = event.target.result;
+                        saveState();
+                    }
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Initialize default values
+            previewArtistName.style.fontSize = artistNameSize.value + 'px';
+            previewSongTitle.style.fontSize = titleSize.value + 'px';
+            previewSubtitle.style.fontSize = subtitleSize.value + 'px';
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', (e) => {
+                // Ctrl/Cmd + D to download
+                if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
+                    e.preventDefault();
+                    downloadBtn.click();
+                }
+                
+                // Escape to clear focus
+                if (e.key === 'Escape') {
+                    document.activeElement.blur();
+                }
+            });
+
+            // Auto-save to localStorage
+            function saveState() {
+                const state = {
+                    artistName: artistNameInput.value,
+                    songTitle: songTitleInput.value,
+                    subtitle: subtitleInput.value,
+                    artistNameSize: artistNameSize.value,
+                    titleSize: titleSize.value,
+                    subtitleSize: subtitleSize.value,
+                    format: currentFormat,
+                    scale: currentScale,
+                    aspectRatio: promoCard.classList.contains('aspect-square') ? 'square' : 'story'
+                };
+                localStorage.setItem('promoCardState', JSON.stringify(state));
+            }
+
+            // Load saved state
+            function loadState() {
+                const saved = localStorage.getItem('promoCardState');
+                if (saved) {
+                    try {
+                        const state = JSON.parse(saved);
+                        if (state.artistName) artistNameInput.value = state.artistName;
+                        if (state.songTitle) songTitleInput.value = state.songTitle;
+                        if (state.subtitle) subtitleInput.value = state.subtitle;
+                        if (state.artistNameSize) artistNameSize.value = state.artistNameSize;
+                        if (state.titleSize) titleSize.value = state.titleSize;
+                        if (state.subtitleSize) subtitleSize.value = state.subtitleSize;
+                        if (state.format) currentFormat = state.format;
+                        if (state.scale) currentScale = state.scale;
+                        if (state.aspectRatio === 'story') {
+                            document.getElementById('aspectStory').click();
+                        }
+                        
+                        // Trigger updates
+                        artistNameInput.dispatchEvent(new Event('input'));
+                        songTitleInput.dispatchEvent(new Event('input'));
+                        subtitleInput.dispatchEvent(new Event('input'));
+                        artistNameSize.dispatchEvent(new Event('input'));
+                        titleSize.dispatchEvent(new Event('input'));
+                        subtitleSize.dispatchEvent(new Event('input'));
+                        
+                        // Update format buttons
+                        const formatBtn = document.getElementById('format' + currentFormat.toUpperCase());
+                        if (formatBtn) formatBtn.click();
+                    } catch (e) {
+                        console.log('Could not load saved state');
+                    }
+                }
+            }
+
+            // Reset functionality
+            resetBtn.addEventListener('click', () => {
+                if (confirm('Reset all settings to default? This cannot be undone.')) {
+                    // Clear localStorage
+                    localStorage.removeItem('promoCardState');
+                    
+                    // Reset all inputs to defaults
+                    artistNameInput.value = 'Your Artist Name';
+                    songTitleInput.value = 'New Single';
+                    subtitleInput.value = 'Out Now';
+                    artistNameSize.value = '24';
+                    titleSize.value = '20';
+                    subtitleSize.value = '14';
+                    
+                    // Reset preview image
+                    previewImage.src = 'https://placehold.co/400x400/222/FFF?text=ALBUM';
+                    
+                    // Reset format to PNG
+                    document.getElementById('formatPNG').click();
+                    currentFormat = 'png';
+                    currentScale = 2;
+                    
+                    // Reset aspect ratio to square
+                    document.getElementById('aspectSquare').click();
+                    
+                    // Reset color presets
+                    colorPresets.forEach(p => p.classList.remove('ring-2', 'ring-white', 'ring-offset-2', 'ring-offset-gray-900'));
+                    colorPresets[0].classList.add('ring-2', 'ring-white', 'ring-offset-2', 'ring-offset-gray-900');
+                    
+                    // Reset background
+                    promoCard.style.background = 'linear-gradient(135deg, #1DB954 0%, #1ed760 100%)';
+                    
+                    // Trigger all updates
+                    artistNameInput.dispatchEvent(new Event('input'));
+                    songTitleInput.dispatchEvent(new Event('input'));
+                    subtitleInput.dispatchEvent(new Event('input'));
+                    artistNameSize.dispatchEvent(new Event('input'));
+                    titleSize.dispatchEvent(new Event('input'));
+                    subtitleSize.dispatchEvent(new Event('input'));
+                    
+                    showToast('Settings reset to defaults!', 'success');
+                }
+            });
+
+            // Download functionality
+            downloadBtn.addEventListener('click', () => {
+                // Update button text
+                downloadBtnText.textContent = 'Generating...';
+                
+                // Show loader, hide card
+                cardPreviewWrapper.style.display = 'none';
+                loadingIndicator.style.display = 'flex';
+                downloadBtn.disabled = true;
+                downloadBtn.classList.add('opacity-50', 'cursor-not-allowed');
+
+                // Use html2canvas to capture the promoCard element
+                html2canvas(promoCard, { 
+                    allowTaint: true, 
+                    useCORS: true, 
+                    scale: currentScale,
+                    backgroundColor: null
+                }).then(canvas => {
+                    // Create a link element
+                    const link = document.createElement('a');
+                    
+                    // Create filename with proper extension
+                    const artistName = artistNameInput.value.replace(/\s+/g, '-').toLowerCase() || 'promo-card';
+                    const fileName = `${artistName}.${currentFormat}`;
+                    
+                    // Set the download attribute and href based on format
+                    link.download = fileName;
+                    
+                    if (currentFormat === 'png') {
+                        link.href = canvas.toDataURL('image/png');
+                    } else if (currentFormat === 'jpg') {
+                        link.href = canvas.toDataURL('image/jpeg', 0.95);
+                    } else if (currentFormat === 'webp') {
+                        link.href = canvas.toDataURL('image/webp', 0.95);
+                    }
+                    
+                    // Trigger the download
+                    link.click();
+
+                    // Show success toast
+                    showToast(`Card downloaded as ${fileName.toUpperCase()}!`, 'success');
+
+                    // Hide loader, show card again
+                    cardPreviewWrapper.style.display = 'block';
+                    loadingIndicator.style.display = 'none';
+                    downloadBtn.disabled = false;
+                    downloadBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    downloadBtnText.textContent = 'Download';
+
+                }).catch(err => {
+                    console.error("Oops, something went wrong!", err);
+                    
+                    // Show error toast
+                    showToast('Download failed. Please try again.', 'error');
+                    
+                    // Hide loader, show card again even if there's an error
+                    cardPreviewWrapper.style.display = 'block';
+                    loadingIndicator.style.display = 'none';
+                    downloadBtn.disabled = false;
+                    downloadBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    downloadBtnText.textContent = 'Download';
+                });
+            });
+
+            // Toast notification function
+            function showToast(message, type = 'success') {
+                toastMessage.textContent = message;
+                
+                if (type === 'error') {
+                    toast.classList.remove('bg-green-500');
+                    toast.classList.add('bg-red-500');
+                } else {
+                    toast.classList.remove('bg-red-500');
+                    toast.classList.add('bg-green-500');
+                }
+                
+                toast.classList.remove('hidden');
+                toast.style.transform = 'translateX(100%)';
+                toast.style.opacity = '0';
+                
+                setTimeout(() => {
+                    toast.style.transform = 'translateX(0)';
+                    toast.style.opacity = '1';
+                }, 100);
+                
+                setTimeout(() => {
+                    toast.style.transform = 'translateX(100%)';
+                    toast.style.opacity = '0';
+                    setTimeout(() => {
+                        toast.classList.add('hidden');
+                    }, 300);
+                }, 3000);
+            }
+
+            // Load saved state on page load
+            loadState();
+
+            // Show welcome toast
+            setTimeout(() => {
+                showToast('🎵 Official Spotify Promo Cards loaded! Press Ctrl+D to download.', 'success');
+            }, 1000);
+
+            // Add version info to console
+            console.log('🎨 Spotify Promo Cards - Official Design Tool');
+            console.log('✨ Authentic Spotify design recreation');
+            console.log('⌨️  Keyboard shortcuts: Ctrl+D (download), Escape (clear focus)');
+        });
+    </script>
+
+    <style>
+        /* Custom slider styling for Spotify look */
+        .slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #1DB954;
+            cursor: pointer;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .slider::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #1DB954;
+            cursor: pointer;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* Spotify-style animations */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .template-btn:hover {
+            animation: pulse 0.6s ease-in-out;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</body>
+</html>
