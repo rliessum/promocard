@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests;">
+    <meta name="description" content="Create professional promotional cards for artists and albums. Dark theme inspired by modern design.">
+    <meta name="keywords" content="promo cards, artist promotion, music marketing, promotional graphics, dark theme">
+    <meta name="author" content="Artist Promo Cards">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="rating" content="general">
+    <meta name="language" content="en">
+    <link rel="canonical" href="https://promocard.liessum.dev/theme-dark.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://promocard.liessum.dev/theme-dark.html">
+    <meta property="og:title" content="Artist Promo Cards - Dark Theme">
+    <meta property="og:description" content="Professional promotional card generator with elegant dark theme design.">
+    <meta property="og:image" content="https://promocard.liessum.dev/icon-512.svg">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:type" content="image/svg+xml">
+    <meta property="og:site_name" content="Artist Promo Cards">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://promocard.liessum.dev/theme-dark.html">
+    <meta property="twitter:title" content="Artist Promo Cards - Dark Theme">
+    <meta property="twitter:description" content="Professional promotional card generator with elegant dark theme design.">
+    <meta property="twitter:image" content="https://promocard.liessum.dev/icon-512.svg">
+    <meta property="twitter:creator" content="@artistpromocards">
+    <meta property="twitter:site" content="@artistpromocards">
+    
+    <title>Artist Promo Cards - Dark Theme</title>
+    <meta name="theme-color" content="#0f172a">
+    
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Promo Cards Dark">
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="manifest" href="manifest.json">
+    <link href="output.css" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        /* Dark Theme Variables */
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-tertiary: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #64748b;
+            --accent-primary: #6366f1;
+            --accent-secondary: #8b5cf6;
+            --border-color: #475569;
+            --border-light: #334155;
+        }
+        
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* Enhanced focus styles */
+        *:focus-visible {
+            outline: 2px solid var(--accent-primary);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Modern button styles */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.1), 0 2px 4px -1px rgba(99, 102, 241, 0.06);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.1), 0 4px 6px -2px rgba(99, 102, 241, 0.05);
+        }
+        
+        /* Card preview styles */
+        .promo-card {
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .promo-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            border-radius: 1rem;
+        }
+        
+        /* Form controls */
+        .form-input {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            color: var(--text-primary);
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            width: 100%;
+            transition: all 0.2s ease;
+        }
+        
+        .form-input:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+        
+        /* Control panels */
+        .control-panel {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            backdrop-filter: blur(8px);
+        }
+        
+        /* Color presets */
+        .color-preset {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 0.75rem;
+            border: 2px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        
+        .color-preset:hover {
+            transform: scale(1.1);
+            border-color: var(--text-primary);
+        }
+        
+        .color-preset.active {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+        
+        /* Range sliders */
+        .range-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 6px;
+            border-radius: 3px;
+            background: var(--bg-tertiary);
+            outline: none;
+            width: 100%;
+        }
+        
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        
+        .range-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        
+        /* Utilities */
+        .glass-effect {
+            backdrop-filter: blur(16px);
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Animation helpers */
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .control-panel {
+                padding: 1rem;
+            }
+            
+            .promo-card {
+                padding: 2rem;
+            }
+        }
+    </style>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" as="script" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" defer></script>
+</head>
+<body>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-black px-4 py-2 rounded-lg z-50">Skip to main content</a>
+
+    <!-- Loading screen -->
+    <div id="loading" class="fixed inset-0 bg-slate-900 flex items-center justify-center z-50">
+        <div class="text-center">
+            <div class="w-16 h-16 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <h2 class="text-xl font-semibold text-white">Artist Promo Cards</h2>
+            <p class="text-slate-400">Dark Theme Loading...</p>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <main id="main-content" class="min-h-screen">
+        <!-- Header -->
+        <header class="border-b border-slate-700/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="white">
+                                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-bold text-white">Artist Promo Cards</h1>
+                            <p class="text-sm text-slate-400">Dark Theme</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <a href="index.html" class="text-slate-400 hover:text-white transition-colors">Default</a>
+                        <a href="theme-light.html" class="text-slate-400 hover:text-white transition-colors">Light</a>
+                        <span class="text-indigo-400 font-medium">Dark</span>
+                        <a href="theme-neon.html" class="text-slate-400 hover:text-white transition-colors">Neon</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main editor -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="grid lg:grid-cols-5 gap-8">
+                <!-- Controls sidebar -->
+                <div class="lg:col-span-2 space-y-6">
+                    <!-- Content section -->
+                    <div class="control-panel">
+                        <h3 class="text-lg font-semibold text-white mb-4">Content</h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label for="artistName" class="block text-sm font-medium text-slate-300 mb-2">Artist Name</label>
+                                <input type="text" id="artistName" value="Your Artist Name" class="form-input" placeholder="Enter artist name">
+                            </div>
+                            
+                            <div>
+                                <label for="songTitle" class="block text-sm font-medium text-slate-300 mb-2">Song/Album Title</label>
+                                <input type="text" id="songTitle" value="New Single Out Now" class="form-input" placeholder="Enter song title">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-slate-300 mb-2">Artwork</label>
+                                <div class="relative">
+                                    <input type="file" id="imageUpload" accept="image/*" class="hidden">
+                                    <label for="imageUpload" class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-slate-600 rounded-lg cursor-pointer hover:border-indigo-500 transition-colors bg-slate-800/50">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-slate-400 mb-2">
+                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                                            <polyline points="21,15 16,10 5,21"/>
+                                        </svg>
+                                        <p class="text-slate-400 text-sm">Click to upload</p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Colors section -->
+                    <div class="control-panel">
+                        <h3 class="text-lg font-semibold text-white mb-4">Colors</h3>
+                        <div class="grid grid-cols-4 gap-3">
+                            <button class="color-preset active" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);" data-color="#6366f1" title="Indigo Purple"></button>
+                            <button class="color-preset" style="background: linear-gradient(135deg, #ef4444, #f97316);" data-color="#ef4444" title="Red Orange"></button>
+                            <button class="color-preset" style="background: linear-gradient(135deg, #10b981, #059669);" data-color="#10b981" title="Emerald"></button>
+                            <button class="color-preset" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);" data-color="#3b82f6" title="Blue"></button>
+                            <button class="color-preset" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);" data-color="#8b5cf6" title="Purple"></button>
+                            <button class="color-preset" style="background: linear-gradient(135deg, #f59e0b, #d97706);" data-color="#f59e0b" title="Amber"></button>
+                            <button class="color-preset" style="background: linear-gradient(135deg, #ec4899, #be185d);" data-color="#ec4899" title="Pink"></button>
+                            <button class="color-preset" style="background: linear-gradient(135deg, #06b6d4, #0891b2);" data-color="#06b6d4" title="Cyan"></button>
+                        </div>
+                    </div>
+
+                    <!-- Typography section -->
+                    <div class="control-panel">
+                        <h3 class="text-lg font-semibold text-white mb-4">Typography</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-300 mb-2">Artist Name Size</label>
+                                <div class="flex items-center space-x-3">
+                                    <input type="range" id="artistNameSize" min="24" max="72" value="48" class="range-slider flex-1">
+                                    <span id="artistNameSizeValue" class="text-sm text-indigo-400 font-mono min-w-[3rem]">48px</span>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-300 mb-2">Song Title Size</label>
+                                <div class="flex items-center space-x-3">
+                                    <input type="range" id="songTitleSize" min="12" max="36" value="24" class="range-slider flex-1">
+                                    <span id="songTitleSizeValue" class="text-sm text-indigo-400 font-mono min-w-[3rem]">24px</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preview panel -->
+                <div class="lg:col-span-3">
+                    <div class="control-panel">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-lg font-semibold text-white">Preview</h3>
+                            <button id="downloadBtn" class="btn-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline-block mr-2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="7 10 12 15 17 10"/>
+                                    <line x1="12" y1="15" x2="12" y2="3"/>
+                                </svg>
+                                <span id="downloadBtnText">Download Card</span>
+                            </button>
+                        </div>
+                        
+                        <div class="flex justify-center">
+                            <div class="relative">
+                                <div id="cardPreview" class="promo-card w-96 h-96 flex flex-col justify-center">
+                                    <div class="relative z-10">
+                                        <h2 id="previewArtistName" class="text-white font-bold text-4xl mb-3 leading-tight">Your Artist Name</h2>
+                                        <p id="previewSongTitle" class="text-white/90 text-xl leading-relaxed">New Single Out Now</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Loading overlay -->
+                                <div id="previewLoader" class="absolute inset-0 bg-slate-800/80 rounded-2xl flex items-center justify-center hidden">
+                                    <div class="w-8 h-8 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast notification -->
+    <div id="toast" class="fixed top-4 right-4 transform translate-x-full transition-transform duration-300 z-50">
+        <div class="bg-green-500 text-white px-4 py-3 rounded-lg shadow-lg flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span id="toastMessage">Card downloaded successfully!</span>
+        </div>
+    </div>
+
+    <script>
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide loading screen
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+            }, 1000);
+
+            // Initialize functionality
+            initializeApp();
+        });
+
+        function initializeApp() {
+            // DOM elements
+            const artistNameInput = document.getElementById('artistName');
+            const songTitleInput = document.getElementById('songTitle');
+            const imageUpload = document.getElementById('imageUpload');
+            const previewArtistName = document.getElementById('previewArtistName');
+            const previewSongTitle = document.getElementById('previewSongTitle');
+            const cardPreview = document.getElementById('cardPreview');
+            const downloadBtn = document.getElementById('downloadBtn');
+            const artistNameSize = document.getElementById('artistNameSize');
+            const songTitleSize = document.getElementById('songTitleSize');
+            const artistNameSizeValue = document.getElementById('artistNameSizeValue');
+            const songTitleSizeValue = document.getElementById('songTitleSizeValue');
+            const colorPresets = document.querySelectorAll('.color-preset');
+
+            // Event listeners
+            artistNameInput.addEventListener('input', function() {
+                previewArtistName.textContent = this.value || 'Your Artist Name';
+            });
+
+            songTitleInput.addEventListener('input', function() {
+                previewSongTitle.textContent = this.value || 'New Single Out Now';
+            });
+
+            artistNameSize.addEventListener('input', function() {
+                previewArtistName.style.fontSize = this.value + 'px';
+                artistNameSizeValue.textContent = this.value + 'px';
+            });
+
+            songTitleSize.addEventListener('input', function() {
+                previewSongTitle.style.fontSize = this.value + 'px';
+                songTitleSizeValue.textContent = this.value + 'px';
+            });
+
+            // Color presets
+            colorPresets.forEach(preset => {
+                preset.addEventListener('click', function() {
+                    const color = this.dataset.color;
+                    cardPreview.style.background = `linear-gradient(135deg, ${color} 0%, ${adjustBrightness(color, -20)} 100%)`;
+                    
+                    colorPresets.forEach(p => p.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Image upload
+            imageUpload.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        cardPreview.style.backgroundImage = `url(${e.target.result})`;
+                        cardPreview.style.backgroundSize = 'cover';
+                        cardPreview.style.backgroundPosition = 'center';
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Download functionality
+            downloadBtn.addEventListener('click', downloadCard);
+        }
+
+        function adjustBrightness(color, percent) {
+            const num = parseInt(color.replace("#", ""), 16);
+            const amt = Math.round(2.55 * percent);
+            const R = (num >> 16) + amt;
+            const G = (num >> 8 & 0x00FF) + amt;
+            const B = (num & 0x0000FF) + amt;
+            return "#" + (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 +
+                (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 +
+                (B < 255 ? B < 1 ? 0 : B : 255)).toString(16).slice(1);
+        }
+
+        function downloadCard() {
+            const cardElement = document.getElementById('cardPreview');
+            const downloadBtn = document.getElementById('downloadBtn');
+            const downloadBtnText = document.getElementById('downloadBtnText');
+            const previewLoader = document.getElementById('previewLoader');
+            
+            // Show loading state
+            downloadBtnText.textContent = 'Generating...';
+            downloadBtn.disabled = true;
+            previewLoader.classList.remove('hidden');
+
+            html2canvas(cardElement, {
+                scale: 3,
+                backgroundColor: null,
+                width: 384,
+                height: 384,
+                useCORS: true,
+                allowTaint: false
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'artist-promo-card-dark.png';
+                link.href = canvas.toDataURL('image/png', 1.0);
+                link.click();
+
+                showToast('Card downloaded successfully!');
+                
+                // Reset state
+                downloadBtnText.textContent = 'Download Card';
+                downloadBtn.disabled = false;
+                previewLoader.classList.add('hidden');
+            }).catch(error => {
+                console.error('Download failed:', error);
+                showToast('Download failed. Please try again.', 'error');
+                
+                downloadBtnText.textContent = 'Download Card';
+                downloadBtn.disabled = false;
+                previewLoader.classList.add('hidden');
+            });
+        }
+
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            
+            toastMessage.textContent = message;
+            toast.classList.remove('translate-x-full');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-x-full');
+            }, 3000);
+        }
+
+        // Console branding
+        console.log('🌙 Artist Promo Cards - Dark Theme v1.0.0');
+        console.log('💜 Inspired by modern design principles');
+    </script>
+</body>
+</html>

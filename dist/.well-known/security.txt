@@ -1,0 +1,5 @@
+Contact: https://promocard.liessum.dev/
+Expires: 2026-06-09T00:00:00.000Z
+Acknowledgments: https://promocard.liessum.dev/
+Preferred-Languages: en
+Canonical: https://promocard.liessum.dev/.well-known/security.txt
