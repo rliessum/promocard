@@ -3,46 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Create official Spotify promo cards for artists. Generate stunning promotional graphics with authentic Spotify design.">
-    <meta name="keywords" content="spotify promo cards, artist promotion, spotify design, music marketing, promotional graphics">
-    <meta name="author" content="Spotify Promo Cards">
+    <meta name="description" content="Create professional promo cards for artists and albums. Generate stunning promotional graphics with modern design.">
+    <meta name="keywords" content="promo cards, artist promotion, music marketing, promotional graphics, album covers">
+    <meta name="author" content="Promo Card Generator">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://promocard.liessum.dev/">
-    <meta property="og:title" content="Spotify Artist Promo Cards - Official Design Tool">
-    <meta property="og:description" content="Create stunning promotional cards for artists with Spotify's official design system.">
+    <meta property="og:title" content="Artist Promo Cards - Professional Design Tool">
+    <meta property="og:description" content="Create stunning promotional cards for artists and albums with professional design templates.">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://promocard.liessum.dev/">
-    <meta property="twitter:title" content="Spotify Artist Promo Cards - Official Design Tool">
-    <meta property="twitter:description" content="Create stunning promotional cards for artists with Spotify's official design system.">
+    <meta property="twitter:title" content="Artist Promo Cards - Professional Design Tool">
+    <meta property="twitter:description" content="Create stunning promotional cards for artists and albums with professional design templates.">
     
-    <title>Spotify Artist Promo Cards - Official Design Tool</title>
+    <title>Artist Promo Cards - Professional Design Tool</title>
     <meta name="build-timestamp" content="2025-06-09-rebuild">
-    <meta name="version" content="3.0.0-spotify-official">
+    <meta name="version" content="3.1.0-promo-cards">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link href="output.css" rel="stylesheet">
     <style>
-        /* Spotify Official Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Circular:wght@300;400;500;700;900&display=swap');
+        /* Professional Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
         
         /* Critical CSS */
         body { 
             background: #000; 
             color: #fff; 
             margin: 0; 
-            font-family: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             min-height: 100vh;
         }
         
-        /* Spotify Green */
-        .spotify-green { color: #1DB954; }
-        .bg-spotify-green { background-color: #1DB954; }
+        /* Primary Brand Color */
+        .brand-green { color: #1DB954; }
+        .bg-brand-green { background-color: #1DB954; }
         
-        /* Custom Spotify Components */
-        .spotify-header {
+        /* Custom Components */
+        .main-header {
             background: #000;
             border-bottom: 1px solid #282828;
         }
@@ -119,24 +119,24 @@
     </style>
 </head>
 <body class="bg-black text-white min-h-screen">
-    <!-- Spotify Header -->
-    <header class="spotify-header sticky top-0 z-50 backdrop-blur-md">
+    <!-- Main Header -->
+    <header class="main-header sticky top-0 z-50 backdrop-blur-md">
         <div class="max-w-screen-2xl mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <!-- Spotify Logo -->
+                <!-- Music Logo -->
                 <div class="flex items-center space-x-8">
                     <div class="flex items-center space-x-3">
-                        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                        <div class="w-8 h-8 bg-brand-green rounded-full flex items-center justify-center">
                             <svg class="w-5 h-5 text-black" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
                             </svg>
                         </div>
-                        <span class="text-xl font-bold">Spotify</span>
+                        <span class="text-xl font-bold">Promo Cards</span>
                     </div>
                     
                     <!-- Navigation -->
                     <nav class="hidden md:flex space-x-6">
-                        <a href="#" class="text-white hover:text-spotify-green transition-colors">Promo Cards</a>
+                        <a href="#" class="text-white hover:text-brand-green transition-colors">Cards</a>
                         <a href="#" class="text-white/70 hover:text-white transition-colors">Templates</a>
                         <a href="#" class="text-white/70 hover:text-white transition-colors">Gallery</a>
                         <a href="#" class="text-white/70 hover:text-white transition-colors">Help</a>
@@ -150,8 +150,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5l-5-5h5v-12"/>
                         </svg>
                     </button>
-                    <button class="bg-spotify-green text-black px-6 py-2 rounded-full font-medium hover:bg-green-400 transition-colors">
-                        Sign up
+                    <button class="bg-brand-green text-black px-6 py-2 rounded-full font-medium hover:bg-green-400 transition-colors">
+                        Get Started
                     </button>
                 </div>
             </div>
@@ -162,18 +162,18 @@
     <main class="max-w-screen-2xl mx-auto px-6 py-8">
         <!-- Hero Section -->
         <section class="text-center mb-12">
-            <h1 class="text-5xl lg:text-6xl font-black mb-6 bg-gradient-to-r from-spotify-green to-green-400 bg-clip-text text-transparent">
+            <h1 class="text-5xl lg:text-6xl font-black mb-6 bg-gradient-to-r from-brand-green to-green-400 bg-clip-text text-transparent">
                 Create Promo Cards
             </h1>
             <p class="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
-                Generate stunning promotional graphics for artists and albums using Spotify's official design system. 
+                Generate stunning promotional graphics for artists and albums using professional design templates. 
                 Perfect for social media, press releases, and marketing campaigns.
             </p>
             
             <!-- Card Type Toggle -->
             <div class="mt-8 flex justify-center">
                 <div class="bg-gray-900 rounded-full p-1 inline-flex">
-                    <button id="artistModeBtn" class="px-6 py-2 rounded-full font-medium transition-all bg-spotify-green text-black" onclick="switchMode('artist')">
+                    <button id="artistModeBtn" class="px-6 py-2 rounded-full font-medium transition-all bg-brand-green text-black" onclick="switchMode('artist')">
                         Artist Cards
                     </button>
                     <button id="albumModeBtn" class="px-6 py-2 rounded-full font-medium transition-all text-white/70 hover:text-white" onclick="switchMode('album')">
@@ -199,7 +199,7 @@
                                     type="text" 
                                     id="artistSearch"
                                     placeholder="Search for an artist..." 
-                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-spotify-green focus:border-transparent transition-all"
+                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-brand-green focus:border-transparent transition-all"
                                 >
                                 <div class="absolute right-3 top-3">
                                     <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -217,7 +217,7 @@
                                     type="text" 
                                     id="artistName"
                                     placeholder="Enter artist name" 
-                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-spotify-green focus:border-transparent transition-all"
+                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-brand-green focus:border-transparent transition-all"
                                     oninput="updatePreview()"
                                 >
                             </div>
@@ -227,7 +227,7 @@
                                     type="text" 
                                     id="monthlyListeners"
                                     placeholder="e.g., 1,234,567" 
-                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-spotify-green focus:border-transparent transition-all"
+                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-brand-green focus:border-transparent transition-all"
                                     oninput="updatePreview()"
                                 >
                             </div>
@@ -246,7 +246,7 @@
                                 >
                                 <label 
                                     for="artistImage" 
-                                    class="flex flex-col items-center justify-center w-full h-32 bg-gray-800 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer hover:border-spotify-green transition-colors"
+                                    class="flex flex-col items-center justify-center w-full h-32 bg-gray-800 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer hover:border-brand-green transition-colors"
                                 >
                                     <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
@@ -269,7 +269,7 @@
                                     type="text" 
                                     id="albumSearch"
                                     placeholder="Search for an album..." 
-                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-spotify-green focus:border-transparent transition-all"
+                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-brand-green focus:border-transparent transition-all"
                                 >
                                 <div class="absolute right-3 top-3">
                                     <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -287,7 +287,7 @@
                                     type="text" 
                                     id="albumTitle"
                                     placeholder="Enter album title" 
-                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-spotify-green focus:border-transparent transition-all"
+                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-brand-green focus:border-transparent transition-all"
                                     oninput="updatePreview()"
                                 >
                             </div>
@@ -297,7 +297,7 @@
                                     type="text" 
                                     id="albumArtist"
                                     placeholder="Artist name" 
-                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-spotify-green focus:border-transparent transition-all"
+                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-brand-green focus:border-transparent transition-all"
                                     oninput="updatePreview()"
                                 >
                             </div>
@@ -310,7 +310,7 @@
                                     type="text" 
                                     id="releaseYear"
                                     placeholder="2024" 
-                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-spotify-green focus:border-transparent transition-all"
+                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-brand-green focus:border-transparent transition-all"
                                     oninput="updatePreview()"
                                 >
                             </div>
@@ -320,7 +320,7 @@
                                     type="text" 
                                     id="trackCount"
                                     placeholder="12 songs" 
-                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-spotify-green focus:border-transparent transition-all"
+                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-brand-green focus:border-transparent transition-all"
                                     oninput="updatePreview()"
                                 >
                             </div>
@@ -339,7 +339,7 @@
                                 >
                                 <label 
                                     for="albumCover" 
-                                    class="flex flex-col items-center justify-center w-full h-32 bg-gray-800 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer hover:border-spotify-green transition-colors"
+                                    class="flex flex-col items-center justify-center w-full h-32 bg-gray-800 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer hover:border-brand-green transition-colors"
                                 >
                                     <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
@@ -373,10 +373,10 @@
                             <div class="flex items-center justify-between">
                                 <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
                                     <svg class="w-4 h-4 text-black" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                                        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
                                     </svg>
                                 </div>
-                                <span class="text-white font-medium">Classic</span>
+                                <span class="text-white font-medium">Music</span>
                             </div>
                         </div>
                     </div>
@@ -395,7 +395,7 @@
                             <div class="flex items-center justify-between">
                                 <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
                                     <svg class="w-4 h-4 text-black" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                                        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
                                     </svg>
                                 </div>
                                 <span class="text-white font-medium">Playlist</span>
@@ -417,7 +417,7 @@
                             <div class="flex items-center justify-between">
                                 <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
                                     <svg class="w-4 h-4 text-black" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                                        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
                                     </svg>
                                 </div>
                                 <span class="text-white font-medium">Album</span>
@@ -443,7 +443,7 @@
                                 <div class="text-white/70 text-sm">2024 • 12 songs</div>
                                 <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
                                     <svg class="w-4 h-4 text-black" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                                        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
                                     </svg>
                                 </div>
                             </div>
@@ -465,7 +465,7 @@
                                 <div class="text-white/70 text-sm">2024 • 12 songs</div>
                                 <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
                                     <svg class="w-4 h-4 text-black" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                                        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
                                     </svg>
                                 </div>
                             </div>
@@ -487,7 +487,7 @@
                                 <div class="text-white/70 text-sm">New Release</div>
                                 <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
                                     <svg class="w-4 h-4 text-black" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                                        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
                                     </svg>
                                 </div>
                             </div>
@@ -515,10 +515,10 @@
                         <div class="flex items-center justify-between">
                             <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
                                 <svg class="w-5 h-5 text-black" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
                                 </svg>
                             </div>
-                            <span class="text-white font-medium">Spotify</span>
+                            <span class="text-white font-medium">Music</span>
                         </div>
                     </div>
                 </div>
@@ -530,7 +530,7 @@
             <button 
                 id="downloadBtn"
                 onclick="downloadPromoCard()" 
-                class="bg-spotify-green text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-green-400 transition-all transform hover:scale-105 shadow-lg"
+                class="bg-brand-green text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-green-400 transition-all transform hover:scale-105 shadow-lg"
             >
                 Download Promo Card
             </button>
@@ -542,7 +542,7 @@
     <div id="loadingOverlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden">
         <div class="flex items-center justify-center min-h-screen">
             <div class="text-center">
-                <div class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-spotify-green border-t-transparent mb-4"></div>
+                <div class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-brand-green border-t-transparent mb-4"></div>
                 <p class="text-white text-lg">Generating your promo card...</p>
             </div>
         </div>
@@ -565,9 +565,9 @@
             const albumBtn = document.getElementById('albumModeBtn');
             
             if (mode === 'artist') {
-                artistBtn.classList.add('bg-spotify-green', 'text-black');
+                artistBtn.classList.add('bg-brand-green', 'text-black');
                 artistBtn.classList.remove('text-white/70', 'hover:text-white');
-                albumBtn.classList.remove('bg-spotify-green', 'text-black');
+                albumBtn.classList.remove('bg-brand-green', 'text-black');
                 albumBtn.classList.add('text-white/70', 'hover:text-white');
                 
                 // Show/hide inputs
@@ -583,9 +583,9 @@
                 document.getElementById('templatesTitle').textContent = 'Choose Your Template';
                 
             } else {
-                albumBtn.classList.add('bg-spotify-green', 'text-black');
+                albumBtn.classList.add('bg-brand-green', 'text-black');
                 albumBtn.classList.remove('text-white/70', 'hover:text-white');
-                artistBtn.classList.remove('bg-spotify-green', 'text-black');
+                artistBtn.classList.remove('bg-brand-green', 'text-black');
                 artistBtn.classList.add('text-white/70', 'hover:text-white');
                 
                 // Show/hide inputs
@@ -742,8 +742,8 @@
                 // Create download link
                 const link = document.createElement('a');
                 const filename = currentMode === 'artist' ? 
-                    `spotify-artist-card-${Date.now()}.png` : 
-                    `spotify-album-card-${Date.now()}.png`;
+                    `promo-artist-card-${Date.now()}.png` : 
+                    `promo-album-card-${Date.now()}.png`;
                 link.download = filename;
                 link.href = canvas.toDataURL('image/png');
                 link.click();
@@ -780,7 +780,7 @@
 
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('🎨 Spotify Promo Cards v3.1.0 - Artist & Album Edition');
+            console.log('🎨 Promo Card Generator v3.1.0 - Artist & Album Edition');
             console.log('✨ Enhanced with album cover generation');
             console.log('🚀 Build: 2025-06-09-extended | Status: LIVE ✅');
             

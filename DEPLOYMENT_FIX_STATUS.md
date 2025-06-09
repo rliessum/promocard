@@ -7,10 +7,10 @@
 ## Changes Applied:
 
 ### ✅ Fixed Deployment Metadata
-- **Title Updated:** "Spotify Promo Cards - FIXED DEPLOYMENT ✅"
-- **Version Bumped:** 2.1.1-2gb-support → 2.1.2-deployment-fix
+- **Title Updated:** "Promo Cards - FIXED DEPLOYMENT ✅"
+- **Version Bumped:** 2.1.1-2gb-support → 3.1.2-deployment-fix
 - **Timestamp Updated:** 2025-06-09-17:15-CEST-deployment-fix
-- **Console Logging:** Updated to v2.1.2 with "DEPLOYMENT FIXED" message
+- **Console Logging:** Updated to v3.1.2 with "DEPLOYMENT FIXED" message
 
 ### ✅ Created Debug Resources
 - **Debug Test Page:** `/dist/debug-test.html` - Tests basic functionality
