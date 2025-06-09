@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create professional promo cards for artists. Upload your music, customize colors, and download high-quality promotional graphics.">
+    <meta name="keywords" content="promo cards, music promotion, promotional graphics, music marketing, promotional graphics">
+    <meta name="author" content="Artist Promo Cards">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://promocard.liessum.dev/">
+    <meta property="og:title" content="Artist Promo Cards - Professional Design Tool">
+    <meta property="og:description" content="Create stunning promotional cards for your music with professional design tools.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://promocard.liessum.dev/">
+    <meta property="twitter:title" content="Artist Promo Cards - Professional Design Tool">
+    <meta property="twitter:description" content="Create stunning promotional cards for your music with professional design tools.">
+    
+    <title>Artist Promo Cards - Landing Page</title>
+    <meta name="build-timestamp" content="2025-06-09-landing-page">
+    <meta name="version" content="4.0.0-landing-page">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="output.css" rel="stylesheet">
+    <style>
+        /* Professional Design System Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Circular:wght@300;400;500;700;900&display=swap');
+        
+        /* Critical CSS */
+        body { 
+            background: #000; 
+            color: #fff; 
+            margin: 0; 
+            font-family: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            min-height: 100vh;
+        }
+        
+        /* Music Green */
+        .music-green { color: #1DB954; }
+        .bg-music-green { background-color: #1DB954; }
+        
+        /* Custom Professional Components */
+        .main-header {
+            background: #000;
+            border-bottom: 1px solid #282828;
+        }
+        
+        .artist-card {
+            background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .artist-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
+            z-index: 1;
+        }
+        
+        .artist-card-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .playlist-style {
+            background: linear-gradient(135deg, #5739D4 0%, #7B2EBF 100%);
+        }
+        
+        .album-style {
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+        }
+        
+        .gradient-overlay {
+            background: linear-gradient(45deg, rgba(29,185,84,0.1) 0%, rgba(30,215,96,0.2) 100%);
+        }
+    </style>
+</head>
+<body class="bg-black text-white min-h-screen">
+    <!-- Main Header -->
+    <header class="main-header sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-screen-2xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-8">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                            <svg class="w-5 h-5 text-black" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                            </svg>
+                        </div>
+                        <h1 class="text-2xl font-bold tracking-tight">Artist Cards</h1>
+                    </div>
+                    
+                    <!-- Navigation -->
+                    <nav class="hidden md:flex space-x-6">
+                        <a href="#" class="text-white hover:text-music-green transition-colors">Promo Cards</a>
+                        <a href="#" class="text-white/70 hover:text-white transition-colors">Templates</a>
+                        <a href="#" class="text-white/70 hover:text-white transition-colors">Gallery</a>
+                        <a href="#" class="text-white/70 hover:text-white transition-colors">Help</a>
+                    </nav>
+                </div>
+                
+                <!-- User Actions -->
+                <div class="flex items-center space-x-4">
+                    <button class="text-white/70 hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5l-5-5h5v-12"/>
+                        </svg>
+                    </button>
+                    <button class="bg-music-green text-black px-6 py-2 rounded-full font-medium hover:bg-green-400 transition-colors">
+                        Sign up
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-screen-2xl mx-auto px-6 py-8">
+        <!-- Hero Section -->
+        <section class="text-center mb-12">
+            <h1 class="text-5xl lg:text-6xl font-black mb-6 bg-gradient-to-r from-music-green to-green-400 bg-clip-text text-transparent">
+                Create Artist Promo Cards
+            </h1>
+            <p class="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+                Design professional promotional graphics for your music with modern design tools. 
+                Perfect for social media, press releases, and marketing campaigns.
+            </p>
+        </section>
+
+        <!-- Artist Input Section -->
+        <section class="mb-12">
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-800">
+                    <h2 class="text-2xl font-bold mb-6 text-center">Artist Information</h2>
+                    
+                    <!-- Artist Search -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-white/80 mb-2">Search Artist</label>
+                        <div class="relative">
+                            <input 
+                                type="text" 
+                                id="artistSearch"
+                                placeholder="Search for an artist..." 
+                                class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-music-green focus:border-transparent transition-all"
+                            >
+                            <div class="absolute right-3 top-3">
+                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Manual Artist Input -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-white/80 mb-2">Artist Name</label>
+                            <input 
+                                type="text" 
+                                id="artistName"
+                                placeholder="Enter artist name" 
+                                class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-music-green focus:border-transparent transition-all"
+                            >
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-white/80 mb-2">Monthly Listeners</label>
+                            <input 
+                                type="text" 
+                                id="monthlyListeners"
+                                placeholder="e.g., 1,234,567" 
+                                class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-music-green focus:border-transparent transition-all"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Artist Image Upload -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-white/80 mb-2">Artist Image</label>
+                        <div class="relative">
+                            <input 
+                                type="file" 
+                                id="artistImage" 
+                                accept="image/*" 
+                                class="hidden"
+                                onchange="handleArtistImageUpload(event)"
+                            >
+                            <label 
+                                for="artistImage" 
+                                class="flex flex-col items-center justify-center w-full h-32 bg-gray-800 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer hover:border-music-green transition-colors"
+                            >
+                                <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                </svg>
+                                <span class="text-sm text-gray-400">Upload Artist Image</span>
+                                <span class="text-xs text-gray-500 mt-1">JPG, PNG up to 2GB</span>
+                                <span class="text-xs text-yellow-400 mt-1">⚠️ Large files may take longer to process</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promo Card Templates -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8">Choose Your Template</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Template 1: Classic Artist Card -->
+                <div class="template-option cursor-pointer group" onclick="selectTemplate('classic')">
+                    <div class="artist-card p-8 h-64 transition-transform group-hover:scale-105">
+                        <div class="artist-card-content h-full flex flex-col justify-between">
+                            <div>
+                                <div class="w-16 h-16 bg-white/20 rounded-full mb-4"></div>
+                                <h3 class="text-2xl font-bold text-white">Artist Name</h3>
+                                <p class="text-white/80">1,234,567 monthly listeners</p>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-black" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-white font-medium">Classic</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center mt-4 text-white/70">Classic Artist Card</p>
+                </div>
+
+                <!-- Template 2: Playlist Style -->
+                <div class="template-option cursor-pointer group" onclick="selectTemplate('playlist')">
+                    <div class="artist-card playlist-style p-8 h-64 transition-transform group-hover:scale-105">
+                        <div class="artist-card-content h-full flex flex-col justify-between">
+                            <div>
+                                <div class="w-16 h-16 bg-white/20 rounded mb-4"></div>
+                                <h3 class="text-2xl font-bold text-white">Artist Name</h3>
+                                <p class="text-white/80">Top Songs</p>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-black" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-white font-medium">Playlist</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center mt-4 text-white/70">Playlist Style</p>
+                </div>
+
+                <!-- Template 3: Album Style -->
+                <div class="template-option cursor-pointer group" onclick="selectTemplate('album')">
+                    <div class="artist-card album-style p-8 h-64 transition-transform group-hover:scale-105">
+                        <div class="artist-card-content h-full flex flex-col justify-between">
+                            <div>
+                                <div class="w-16 h-16 bg-white/20 rounded mb-4"></div>
+                                <h3 class="text-2xl font-bold text-white">Artist Name</h3>
+                                <p class="text-white/80">Latest Album</p>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-black" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-white font-medium">Album</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center mt-4 text-white/70">Album Style</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Preview -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8">Live Preview</h2>
+            
+            <div class="max-w-lg mx-auto">
+                <div id="promoCardPreview" class="artist-card p-8 aspect-square">
+                    <div class="artist-card-content h-full flex flex-col justify-between">
+                        <div>
+                            <div id="previewImage" class="w-24 h-24 bg-white/20 rounded-full mb-6 overflow-hidden">
+                                <!-- Artist image will be inserted here -->
+                            </div>
+                            <h3 id="previewArtistName" class="text-3xl font-bold text-white mb-2">Your Artist</h3>
+                            <p id="previewListeners" class="text-white/80 text-lg">Monthly listeners</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 text-black" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                                </svg>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section class="text-center">
+            <button 
+                id="downloadBtn"
+                onclick="downloadPromoCard()" 
+                class="bg-music-green text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-green-400 transition-all transform hover:scale-105 shadow-lg"
+            >
+                Download Promo Card
+            </button>
+            <p class="text-white/60 mt-4">High-quality PNG • Perfect for social media</p>
+        </section>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen">
+            <div class="text-center">
+                <div class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-music-green border-t-transparent mb-4"></div>
+                <p class="text-white text-lg">Generating your promo card...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script>
+        let selectedTemplate = 'classic';
+        let uploadedArtistImage = null;
+
+        // Template selection
+        function selectTemplate(template) {
+            selectedTemplate = template;
+            const preview = document.getElementById('promoCardPreview');
+            
+            // Remove existing template classes
+            preview.classList.remove('playlist-style', 'album-style');
+            
+            // Add new template class
+            if (template === 'playlist') {
+                preview.classList.add('playlist-style');
+            } else if (template === 'album') {
+                preview.classList.add('album-style');
+            }
+            
+            // Update template indicators
+            document.querySelectorAll('.template-option').forEach(option => {
+                option.style.opacity = '0.7';
+            });
+            event.target.closest('.template-option').style.opacity = '1';
+        }
+
+        // Handle artist image upload
+        function handleArtistImageUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    uploadedArtistImage = e.target.result;
+                    updatePreview();
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Update live preview
+        function updatePreview() {
+            const artistName = document.getElementById('artistName').value || 'Your Artist';
+            const monthlyListeners = document.getElementById('monthlyListeners').value || 'Monthly listeners';
+            
+            document.getElementById('previewArtistName').textContent = artistName;
+            document.getElementById('previewListeners').textContent = monthlyListeners;
+            
+            // Update artist image
+            const previewImage = document.getElementById('previewImage');
+            if (uploadedArtistImage) {
+                previewImage.innerHTML = `<img src="${uploadedArtistImage}" alt="Artist" class="w-full h-full object-cover rounded-full">`;
+            }
+        }
+
+        // Download promo card
+        async function downloadPromoCard() {
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            const card = document.getElementById('promoCardPreview');
+            
+            try {
+                loadingOverlay.classList.remove('hidden');
+                
+                // Generate canvas
+                const canvas = await html2canvas(card, {
+                    backgroundColor: null,
+                    scale: 3, // High resolution
+                    useCORS: true,
+                    allowTaint: true
+                });
+                
+                // Create download link
+                const link = document.createElement('a');
+                link.download = `artist-promo-card-${Date.now()}.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+                
+            } catch (error) {
+                console.error('Error generating promo card:', error);
+                alert('Error generating promo card. Please try again.');
+            } finally {
+                loadingOverlay.classList.add('hidden');
+            }
+        }
+
+        // Event listeners
+        document.getElementById('artistName').addEventListener('input', updatePreview);
+        document.getElementById('monthlyListeners').addEventListener('input', updatePreview);
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🎨 Artist Promo Cards v3.0.0 - Professional Design');
+            console.log('✨ Modern design system implementation');
+            console.log('🚀 Build: 2025-06-09-rebuild | Status: LIVE ✅');
+            
+            // Set default template selection
+            document.querySelector('.template-option').style.opacity = '1';
+        });
+    </script>
+</body>
+</html>

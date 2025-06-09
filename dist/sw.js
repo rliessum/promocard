@@ -1,8 +1,8 @@
-const CACHE_NAME = 'promo-cards-v3.0.0';
+const CACHE_NAME = 'promo-cards-v4.0.0';
 const urlsToCache = [
   '/',
   '/index.html',
-  '/promo-cards.html',
+  '/landing-page.html',
   '/output.css',
   '/favicon.svg',
   '/manifest.json'
