@@ -42,11 +42,6 @@
         .bg-brand-green { background-color: #1DB954; }
         
         /* Custom Components */
-        .main-header {
-            background: #000;
-            border-bottom: 1px solid #282828;
-        }
-        
         .artist-card {
             background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);
             border-radius: 12px;
@@ -119,44 +114,6 @@
     </style>
 </head>
 <body class="bg-black text-white min-h-screen">
-    <!-- Main Header -->
-    <header class="main-header sticky top-0 z-50 backdrop-blur-md">
-        <div class="max-w-screen-2xl mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <!-- Music Logo -->
-                <div class="flex items-center space-x-8">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-8 h-8 bg-brand-green rounded-full flex items-center justify-center">
-                            <svg class="w-5 h-5 text-black" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
-                            </svg>
-                        </div>
-                        <span class="text-xl font-bold">Promo Cards</span>
-                    </div>
-                    
-                    <!-- Navigation -->
-                    <nav class="hidden md:flex space-x-6">
-                        <a href="#" class="text-white hover:text-brand-green transition-colors">Cards</a>
-                        <a href="#" class="text-white/70 hover:text-white transition-colors">Templates</a>
-                        <a href="#" class="text-white/70 hover:text-white transition-colors">Gallery</a>
-                        <a href="#" class="text-white/70 hover:text-white transition-colors">Help</a>
-                    </nav>
-                </div>
-                
-                <!-- User Actions -->
-                <div class="flex items-center space-x-4">
-                    <button class="text-white/70 hover:text-white transition-colors">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5l-5-5h5v-12"/>
-                        </svg>
-                    </button>
-                    <button class="bg-brand-green text-black px-6 py-2 rounded-full font-medium hover:bg-green-400 transition-colors">
-                        Get Started
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
 
     <!-- Main Content -->
     <main class="max-w-screen-2xl mx-auto px-6 py-8">
