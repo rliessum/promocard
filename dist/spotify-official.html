@@ -78,6 +78,41 @@
             background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
         }
         
+        .album-cover-card {
+            background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .album-cover-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
+            z-index: 1;
+        }
+        
+        .album-cover-card.playlist-style {
+            background: linear-gradient(135deg, #5739D4 0%, #7B2EBF 100%);
+        }
+        
+        .album-cover-card.album-style {
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+        }
+        
+        .album-cover-card.release-style {
+            background: linear-gradient(135deg, #E22134 0%, #FF4081 100%);
+        }
+        
+        .album-cover-card-content {
+            position: relative;
+            z-index: 2;
+        }
+        
         .gradient-overlay {
             background: linear-gradient(45deg, rgba(29,185,84,0.1) 0%, rgba(30,215,96,0.2) 100%);
         }
@@ -128,93 +163,204 @@
         <!-- Hero Section -->
         <section class="text-center mb-12">
             <h1 class="text-5xl lg:text-6xl font-black mb-6 bg-gradient-to-r from-spotify-green to-green-400 bg-clip-text text-transparent">
-                Create Artist Promo Cards
+                Create Promo Cards
             </h1>
             <p class="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
-                Generate stunning promotional graphics for artists using Spotify's official design system. 
+                Generate stunning promotional graphics for artists and albums using Spotify's official design system. 
                 Perfect for social media, press releases, and marketing campaigns.
             </p>
+            
+            <!-- Card Type Toggle -->
+            <div class="mt-8 flex justify-center">
+                <div class="bg-gray-900 rounded-full p-1 inline-flex">
+                    <button id="artistModeBtn" class="px-6 py-2 rounded-full font-medium transition-all bg-spotify-green text-black" onclick="switchMode('artist')">
+                        Artist Cards
+                    </button>
+                    <button id="albumModeBtn" class="px-6 py-2 rounded-full font-medium transition-all text-white/70 hover:text-white" onclick="switchMode('album')">
+                        Album Cards
+                    </button>
+                </div>
+            </div>
         </section>
 
-        <!-- Artist Input Section -->
+        <!-- Input Section -->
         <section class="mb-12">
             <div class="max-w-2xl mx-auto">
                 <div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-800">
-                    <h2 class="text-2xl font-bold mb-6 text-center">Artist Information</h2>
+                    <h2 id="inputSectionTitle" class="text-2xl font-bold mb-6 text-center">Artist Information</h2>
                     
-                    <!-- Artist Search -->
-                    <div class="mb-6">
-                        <label class="block text-sm font-medium text-white/80 mb-2">Search Artist</label>
-                        <div class="relative">
-                            <input 
-                                type="text" 
-                                id="artistSearch"
-                                placeholder="Search for an artist..." 
-                                class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-spotify-green focus:border-transparent transition-all"
-                            >
-                            <div class="absolute right-3 top-3">
-                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-                                </svg>
+                    <!-- Artist Mode Inputs -->
+                    <div id="artistInputs">
+                        <!-- Artist Search -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-white/80 mb-2">Search Artist</label>
+                            <div class="relative">
+                                <input 
+                                    type="text" 
+                                    id="artistSearch"
+                                    placeholder="Search for an artist..." 
+                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-spotify-green focus:border-transparent transition-all"
+                                >
+                                <div class="absolute right-3 top-3">
+                                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Manual Artist Input -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                            <div>
+                                <label class="block text-sm font-medium text-white/80 mb-2">Artist Name</label>
+                                <input 
+                                    type="text" 
+                                    id="artistName"
+                                    placeholder="Enter artist name" 
+                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-spotify-green focus:border-transparent transition-all"
+                                    oninput="updatePreview()"
+                                >
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-white/80 mb-2">Monthly Listeners</label>
+                                <input 
+                                    type="text" 
+                                    id="monthlyListeners"
+                                    placeholder="e.g., 1,234,567" 
+                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-spotify-green focus:border-transparent transition-all"
+                                    oninput="updatePreview()"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Artist Image Upload -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-white/80 mb-2">Artist Image</label>
+                            <div class="relative">
+                                <input 
+                                    type="file" 
+                                    id="artistImage" 
+                                    accept="image/*" 
+                                    class="hidden"
+                                    onchange="handleArtistImageUpload(event)"
+                                >
+                                <label 
+                                    for="artistImage" 
+                                    class="flex flex-col items-center justify-center w-full h-32 bg-gray-800 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer hover:border-spotify-green transition-colors"
+                                >
+                                    <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                    </svg>
+                                    <span class="text-sm text-gray-400">Upload Artist Image</span>
+                                    <span class="text-xs text-gray-500 mt-1">JPG, PNG up to 2GB</span>
+                                    <span class="text-xs text-yellow-400 mt-1">⚠️ Large files may take longer to process</span>
+                                </label>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Manual Artist Input -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                        <div>
-                            <label class="block text-sm font-medium text-white/80 mb-2">Artist Name</label>
-                            <input 
-                                type="text" 
-                                id="artistName"
-                                placeholder="Enter artist name" 
-                                class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-spotify-green focus:border-transparent transition-all"
-                            >
+                    <!-- Album Mode Inputs -->
+                    <div id="albumInputs" class="hidden">
+                        <!-- Album Search -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-white/80 mb-2">Search Album</label>
+                            <div class="relative">
+                                <input 
+                                    type="text" 
+                                    id="albumSearch"
+                                    placeholder="Search for an album..." 
+                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-spotify-green focus:border-transparent transition-all"
+                                >
+                                <div class="absolute right-3 top-3">
+                                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <label class="block text-sm font-medium text-white/80 mb-2">Monthly Listeners</label>
-                            <input 
-                                type="text" 
-                                id="monthlyListeners"
-                                placeholder="e.g., 1,234,567" 
-                                class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-spotify-green focus:border-transparent transition-all"
-                            >
-                        </div>
-                    </div>
 
-                    <!-- Artist Image Upload -->
-                    <div class="mb-6">
-                        <label class="block text-sm font-medium text-white/80 mb-2">Artist Image</label>
-                        <div class="relative">
-                            <input 
-                                type="file" 
-                                id="artistImage" 
-                                accept="image/*" 
-                                class="hidden"
-                                onchange="handleArtistImageUpload(event)"
-                            >
-                            <label 
-                                for="artistImage" 
-                                class="flex flex-col items-center justify-center w-full h-32 bg-gray-800 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer hover:border-spotify-green transition-colors"
-                            >
-                                <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-                                </svg>
-                                <span class="text-sm text-gray-400">Upload Artist Image</span>
-                                <span class="text-xs text-gray-500 mt-1">JPG, PNG up to 2GB</span>
-                                <span class="text-xs text-yellow-400 mt-1">⚠️ Large files may take longer to process</span>
-                            </label>
+                        <!-- Manual Album Input -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                            <div>
+                                <label class="block text-sm font-medium text-white/80 mb-2">Album Title</label>
+                                <input 
+                                    type="text" 
+                                    id="albumTitle"
+                                    placeholder="Enter album title" 
+                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-spotify-green focus:border-transparent transition-all"
+                                    oninput="updatePreview()"
+                                >
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-white/80 mb-2">Artist Name</label>
+                                <input 
+                                    type="text" 
+                                    id="albumArtist"
+                                    placeholder="Artist name" 
+                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-spotify-green focus:border-transparent transition-all"
+                                    oninput="updatePreview()"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                            <div>
+                                <label class="block text-sm font-medium text-white/80 mb-2">Release Year</label>
+                                <input 
+                                    type="text" 
+                                    id="releaseYear"
+                                    placeholder="2024" 
+                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-spotify-green focus:border-transparent transition-all"
+                                    oninput="updatePreview()"
+                                >
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-white/80 mb-2">Track Count</label>
+                                <input 
+                                    type="text" 
+                                    id="trackCount"
+                                    placeholder="12 songs" 
+                                    class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:ring-2 focus:ring-spotify-green focus:border-transparent transition-all"
+                                    oninput="updatePreview()"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Album Cover Upload -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-white/80 mb-2">Album Cover</label>
+                            <div class="relative">
+                                <input 
+                                    type="file" 
+                                    id="albumCover" 
+                                    accept="image/*" 
+                                    class="hidden"
+                                    onchange="handleAlbumCoverUpload(event)"
+                                >
+                                <label 
+                                    for="albumCover" 
+                                    class="flex flex-col items-center justify-center w-full h-32 bg-gray-800 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer hover:border-spotify-green transition-colors"
+                                >
+                                    <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                    </svg>
+                                    <span class="text-sm text-gray-400">Upload Album Cover</span>
+                                    <span class="text-xs text-gray-500 mt-1">JPG, PNG up to 2GB</span>
+                                    <span class="text-xs text-yellow-400 mt-1">⚠️ Large files may take longer to process</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Promo Card Templates -->
+        <!-- Templates Section -->
         <section class="mb-12">
-            <h2 class="text-3xl font-bold text-center mb-8">Choose Your Template</h2>
+            <h2 id="templatesTitle" class="text-3xl font-bold text-center mb-8">Choose Your Template</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Artist Templates -->
+            <div id="artistTemplates" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <!-- Template 1: Classic Artist Card -->
                 <div class="template-option cursor-pointer group" onclick="selectTemplate('classic')">
                     <div class="artist-card p-8 h-64 transition-transform group-hover:scale-105">
@@ -281,6 +427,75 @@
                     <p class="text-center mt-4 text-white/70">Album Style</p>
                 </div>
             </div>
+
+            <!-- Album Cover Templates -->
+            <div id="albumTemplates" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto hidden">
+                <!-- Album Template 1: Classic Album Cover -->
+                <div class="template-option cursor-pointer group" onclick="selectTemplate('album-classic')">
+                    <div class="album-cover-card p-8 h-64 transition-transform group-hover:scale-105">
+                        <div class="album-cover-card-content h-full flex flex-col justify-between">
+                            <div>
+                                <div class="w-20 h-20 bg-white/20 rounded mb-4"></div>
+                                <h3 class="text-xl font-bold text-white">Album Title</h3>
+                                <p class="text-white/80">Artist Name</p>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="text-white/70 text-sm">2024 • 12 songs</div>
+                                <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-black" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center mt-4 text-white/70">Classic Album Cover</p>
+                </div>
+
+                <!-- Album Template 2: Playlist Style Album -->
+                <div class="template-option cursor-pointer group" onclick="selectTemplate('album-playlist')">
+                    <div class="album-cover-card playlist-style p-8 h-64 transition-transform group-hover:scale-105">
+                        <div class="album-cover-card-content h-full flex flex-col justify-between">
+                            <div>
+                                <div class="w-20 h-20 bg-white/20 rounded mb-4"></div>
+                                <h3 class="text-xl font-bold text-white">Album Title</h3>
+                                <p class="text-white/80">Artist Name</p>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="text-white/70 text-sm">2024 • 12 songs</div>
+                                <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-black" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center mt-4 text-white/70">Purple Style Album</p>
+                </div>
+
+                <!-- Album Template 3: Release Style Album -->
+                <div class="template-option cursor-pointer group" onclick="selectTemplate('album-release')">
+                    <div class="album-cover-card release-style p-8 h-64 transition-transform group-hover:scale-105">
+                        <div class="album-cover-card-content h-full flex flex-col justify-between">
+                            <div>
+                                <div class="w-20 h-20 bg-white/20 rounded mb-4"></div>
+                                <h3 class="text-xl font-bold text-white">Album Title</h3>
+                                <p class="text-white/80">Artist Name</p>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="text-white/70 text-sm">New Release</div>
+                                <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-black" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.48.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center mt-4 text-white/70">Red Release Style</p>
+                </div>
+            </div>
         </section>
 
         <!-- Live Preview -->
@@ -338,6 +553,59 @@
     <script>
         let selectedTemplate = 'classic';
         let uploadedArtistImage = null;
+        let uploadedAlbumCover = null;
+        let currentMode = 'artist'; // 'artist' or 'album'
+
+        // Switch between artist and album modes
+        function switchMode(mode) {
+            currentMode = mode;
+            
+            // Update toggle buttons
+            const artistBtn = document.getElementById('artistModeBtn');
+            const albumBtn = document.getElementById('albumModeBtn');
+            
+            if (mode === 'artist') {
+                artistBtn.classList.add('bg-spotify-green', 'text-black');
+                artistBtn.classList.remove('text-white/70', 'hover:text-white');
+                albumBtn.classList.remove('bg-spotify-green', 'text-black');
+                albumBtn.classList.add('text-white/70', 'hover:text-white');
+                
+                // Show/hide inputs
+                document.getElementById('artistInputs').classList.remove('hidden');
+                document.getElementById('albumInputs').classList.add('hidden');
+                
+                // Show/hide templates
+                document.getElementById('artistTemplates').classList.remove('hidden');
+                document.getElementById('albumTemplates').classList.add('hidden');
+                
+                // Update section titles
+                document.getElementById('inputSectionTitle').textContent = 'Artist Information';
+                document.getElementById('templatesTitle').textContent = 'Choose Your Template';
+                
+            } else {
+                albumBtn.classList.add('bg-spotify-green', 'text-black');
+                albumBtn.classList.remove('text-white/70', 'hover:text-white');
+                artistBtn.classList.remove('bg-spotify-green', 'text-black');
+                artistBtn.classList.add('text-white/70', 'hover:text-white');
+                
+                // Show/hide inputs
+                document.getElementById('albumInputs').classList.remove('hidden');
+                document.getElementById('artistInputs').classList.add('hidden');
+                
+                // Show/hide templates
+                document.getElementById('albumTemplates').classList.remove('hidden');
+                document.getElementById('artistTemplates').classList.add('hidden');
+                
+                // Update section titles
+                document.getElementById('inputSectionTitle').textContent = 'Album Information';
+                document.getElementById('templatesTitle').textContent = 'Choose Your Album Template';
+            }
+            
+            // Reset template selection and update preview
+            selectedTemplate = mode === 'artist' ? 'classic' : 'album-classic';
+            updatePreview();
+            resetTemplateSelection();
+        }
 
         // Template selection
         function selectTemplate(template) {
@@ -345,20 +613,37 @@
             const preview = document.getElementById('promoCardPreview');
             
             // Remove existing template classes
-            preview.classList.remove('playlist-style', 'album-style');
+            preview.classList.remove('playlist-style', 'album-style', 'release-style', 'album-cover-card', 'artist-card');
             
-            // Add new template class
-            if (template === 'playlist') {
-                preview.classList.add('playlist-style');
-            } else if (template === 'album') {
-                preview.classList.add('album-style');
+            // Apply appropriate card style and template class
+            if (currentMode === 'album') {
+                preview.classList.add('album-cover-card');
+                if (template === 'album-playlist') {
+                    preview.classList.add('playlist-style');
+                } else if (template === 'album-release') {
+                    preview.classList.add('release-style');
+                }
+            } else {
+                preview.classList.add('artist-card');
+                if (template === 'playlist') {
+                    preview.classList.add('playlist-style');
+                } else if (template === 'album') {
+                    preview.classList.add('album-style');
+                }
             }
             
             // Update template indicators
+            resetTemplateSelection();
+            event.target.closest('.template-option').style.opacity = '1';
+            
+            updatePreview();
+        }
+
+        // Reset template selection visual indicators
+        function resetTemplateSelection() {
             document.querySelectorAll('.template-option').forEach(option => {
                 option.style.opacity = '0.7';
             });
-            event.target.closest('.template-option').style.opacity = '1';
         }
 
         // Handle artist image upload
@@ -374,18 +659,67 @@
             }
         }
 
+        // Handle album cover upload
+        function handleAlbumCoverUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    uploadedAlbumCover = e.target.result;
+                    updatePreview();
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
         // Update live preview
         function updatePreview() {
-            const artistName = document.getElementById('artistName').value || 'Your Artist';
-            const monthlyListeners = document.getElementById('monthlyListeners').value || 'Monthly listeners';
-            
-            document.getElementById('previewArtistName').textContent = artistName;
-            document.getElementById('previewListeners').textContent = monthlyListeners;
-            
-            // Update artist image
+            const preview = document.getElementById('promoCardPreview');
             const previewImage = document.getElementById('previewImage');
-            if (uploadedArtistImage) {
-                previewImage.innerHTML = `<img src="${uploadedArtistImage}" alt="Artist" class="w-full h-full object-cover rounded-full">`;
+            const previewTitle = document.getElementById('previewArtistName');
+            const previewSubtitle = document.getElementById('previewListeners');
+            
+            if (currentMode === 'artist') {
+                // Artist mode
+                const artistName = document.getElementById('artistName').value || 'Your Artist';
+                const monthlyListeners = document.getElementById('monthlyListeners').value || 'Monthly listeners';
+                
+                previewTitle.textContent = artistName;
+                previewSubtitle.textContent = monthlyListeners;
+                
+                // Update artist image (circular)
+                previewImage.className = 'w-24 h-24 bg-white/20 rounded-full mb-6 overflow-hidden';
+                if (uploadedArtistImage) {
+                    previewImage.innerHTML = `<img src="${uploadedArtistImage}" alt="Artist" class="w-full h-full object-cover rounded-full">`;
+                } else {
+                    previewImage.innerHTML = '';
+                }
+                
+            } else {
+                // Album mode
+                const albumTitle = document.getElementById('albumTitle').value || 'Album Title';
+                const albumArtist = document.getElementById('albumArtist').value || 'Artist Name';
+                const releaseYear = document.getElementById('releaseYear').value || '2024';
+                const trackCount = document.getElementById('trackCount').value || '12 songs';
+                
+                previewTitle.textContent = albumTitle;
+                previewSubtitle.textContent = albumArtist;
+                
+                // Update album cover (square)
+                previewImage.className = 'w-24 h-24 bg-white/20 rounded mb-6 overflow-hidden';
+                if (uploadedAlbumCover) {
+                    previewImage.innerHTML = `<img src="${uploadedAlbumCover}" alt="Album Cover" class="w-full h-full object-cover">`;
+                } else {
+                    previewImage.innerHTML = '';
+                }
+                
+                // Update bottom info for album
+                const bottomInfo = preview.querySelector('.flex.items-center.justify-between div:first-child');
+                if (selectedTemplate === 'album-release') {
+                    bottomInfo.textContent = 'New Release';
+                } else {
+                    bottomInfo.textContent = `${releaseYear} • ${trackCount}`;
+                }
             }
         }
 
@@ -407,7 +741,10 @@
                 
                 // Create download link
                 const link = document.createElement('a');
-                link.download = `spotify-promo-card-${Date.now()}.png`;
+                const filename = currentMode === 'artist' ? 
+                    `spotify-artist-card-${Date.now()}.png` : 
+                    `spotify-album-card-${Date.now()}.png`;
+                link.download = filename;
                 link.href = canvas.toDataURL('image/png');
                 link.click();
                 
@@ -419,18 +756,44 @@
             }
         }
 
-        // Event listeners
-        document.getElementById('artistName').addEventListener('input', updatePreview);
-        document.getElementById('monthlyListeners').addEventListener('input', updatePreview);
+        // Event listeners for artist mode
+        function addArtistEventListeners() {
+            const artistName = document.getElementById('artistName');
+            const monthlyListeners = document.getElementById('monthlyListeners');
+            
+            if (artistName) artistName.addEventListener('input', updatePreview);
+            if (monthlyListeners) monthlyListeners.addEventListener('input', updatePreview);
+        }
+
+        // Event listeners for album mode
+        function addAlbumEventListeners() {
+            const albumTitle = document.getElementById('albumTitle');
+            const albumArtist = document.getElementById('albumArtist');
+            const releaseYear = document.getElementById('releaseYear');
+            const trackCount = document.getElementById('trackCount');
+            
+            if (albumTitle) albumTitle.addEventListener('input', updatePreview);
+            if (albumArtist) albumArtist.addEventListener('input', updatePreview);
+            if (releaseYear) releaseYear.addEventListener('input', updatePreview);
+            if (trackCount) trackCount.addEventListener('input', updatePreview);
+        }
 
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('🎨 Spotify Artist Promo Cards v3.0.0 - Official Rebuild');
-            console.log('✨ Authentic Spotify design system implementation');
-            console.log('🚀 Build: 2025-06-09-rebuild | Status: LIVE ✅');
+            console.log('🎨 Spotify Promo Cards v3.1.0 - Artist & Album Edition');
+            console.log('✨ Enhanced with album cover generation');
+            console.log('🚀 Build: 2025-06-09-extended | Status: LIVE ✅');
             
-            // Set default template selection
-            document.querySelector('.template-option').style.opacity = '1';
+            // Add event listeners
+            addArtistEventListeners();
+            addAlbumEventListeners();
+            
+            // Set default template selection for artist mode
+            resetTemplateSelection();
+            document.querySelector('#artistTemplates .template-option').style.opacity = '1';
+            
+            // Initialize preview
+            updatePreview();
         });
     </script>
 </body>

@@ -1,17 +1,24 @@
 # 🚀 SPOTIFY OFFICIAL REBUILD - June 9, 2025
 
-## Project Status: COMPLETELY REBUILT ✅
+## Project Status: ENHANCED WITH ALBUM COVERS ✅
 
 **New Design:** Based on https://promocards.byspotify.com/artists  
 **Live URL:** https://promocard.liessum.dev/  
 **New Page:** https://promocard.liessum.dev/spotify-official.html
 
-**Version:** 3.0.0-spotify-official-rebuild  
-**Build Date:** June 9, 2025 18:00 CEST  
+**Version:** 3.1.0-artist-album-edition  
+**Build Date:** June 9, 2025 20:00 CEST  
 
 ---
 
-## ✨ NEW FEATURES - OFFICIAL SPOTIFY DESIGN
+## ✨ NEW FEATURES - DUAL MODE PROMO CARDS
+
+### 🎯 **Mode Toggle System**
+- ✅ **Artist Cards Mode** - Create artist promotional materials
+- ✅ **Album Cards Mode** - Generate album cover promo cards
+- ✅ **Seamless Switching** between modes with toggle buttons
+- ✅ **Mode-Specific Templates** for each card type
+- ✅ **Dynamic Interface** updates based on selected mode
 
 ### 🎨 **Authentic Spotify Interface**
 - ✅ **Official Spotify Header** with logo and navigation
@@ -20,26 +27,34 @@
 - ✅ **Professional Layout** matching promocards.byspotify.com
 - ✅ **Responsive Design** optimized for all devices
 
-### 🎭 **Multiple Template Styles**
+### 🎭 **Artist Card Templates**
 - ✅ **Classic Artist Card** - Traditional green gradient
 - ✅ **Playlist Style** - Purple gradient design  
 - ✅ **Album Style** - Orange gradient design
-- ✅ **Interactive Selection** with hover effects
-- ✅ **Live Preview** updates in real-time
+- ✅ **Circular Artist Images** for authentic look
+- ✅ **Monthly Listeners Display** for social proof
 
-### 🔧 **Enhanced Functionality**
-- ✅ **Artist Search Input** for Spotify integration ready
-- ✅ **Manual Artist Input** with name and listeners
-- ✅ **Image Upload** supporting 2GB files with warnings
-- ✅ **Real-time Preview** updates as you type
-- ✅ **High-Quality Download** (3x resolution PNG)
+### 💿 **Album Cover Templates**
+- ✅ **Classic Album Cover** - Clean professional style
+- ✅ **Purple Style Album** - Modern purple gradient
+- ✅ **Red Release Style** - Bold release announcement
+- ✅ **Square Album Covers** for authentic display
+- ✅ **Release Info Display** (year and track count)
+
+### 🔧 **Enhanced Dual Functionality**
+- ✅ **Artist Input Form** - Name, monthly listeners, artist image
+- ✅ **Album Input Form** - Title, artist, release year, track count, cover
+- ✅ **Separate Image Uploads** for artists and albums
+- ✅ **Real-time Preview** updates for both modes
+- ✅ **Mode-Specific Downloads** with appropriate filenames
 
 ### 🎯 **User Experience**
 - ✅ **Smooth Animations** and hover effects
 - ✅ **Loading Overlay** during generation
 - ✅ **Professional Styling** matching Spotify standards
-- ✅ **Intuitive Interface** easy to use
+- ✅ **Intuitive Mode Switching** with visual feedback
 - ✅ **Mobile Responsive** works on all devices
+- ✅ **Template Selection** with interactive previews
 
 ---
 
@@ -48,8 +63,8 @@
 ```
 dist/
 ├── index.html (Updated with new metadata)
-├── spotify-official.html (NEW - Complete rebuild)
-├── output.css (Rebuilt with Tailwind)
+├── spotify-official.html (ENHANCED - Artist & Album Edition)
+├── output.css (Enhanced with album cover styles)
 ├── debug-test.html (Testing)
 ├── deploy-test.html (Testing)
 ├── favicon.svg ✅
@@ -58,19 +73,49 @@ dist/
 
 ---
 
+## 🎨 TEMPLATE SYSTEM
+
+### Artist Card Templates:
+1. **Classic** - Traditional Spotify green gradient
+2. **Playlist** - Purple gradient with modern styling
+3. **Album** - Orange gradient for album promotions
+
+### Album Cover Templates:
+1. **Classic Album Cover** - Clean, professional album display
+2. **Purple Style Album** - Modern purple gradient design
+3. **Red Release Style** - Bold announcement style for new releases
+
+### Features:
+- **Interactive Selection** - Click to choose template
+- **Live Preview** - Real-time updates as you type
+- **Mode-Specific Templates** - Different templates for artist vs album modes
+- **Visual Feedback** - Active template highlighting
+
+---
+
 ## 🚀 DEPLOYMENT READY
 
-### Built Features:
-- ✅ **HTML Structure** - Complete and valid
-- ✅ **CSS Compiled** - Tailwind fully built
-- ✅ **JavaScript** - Functional upload and download
-- ✅ **Assets** - All images and icons included
-- ✅ **Responsive** - Mobile and desktop ready
+### Enhanced Features:
+- ✅ **HTML Structure** - Complete dual-mode implementation
+- ✅ **CSS Enhanced** - Album cover styles and gradients
+- ✅ **JavaScript Extended** - Full artist & album functionality
+- ✅ **Template System** - 6 total templates (3 artist + 3 album)
+- ✅ **Image Handling** - Separate uploads for artists and albums
+- ✅ **Mode Switching** - Seamless toggle between card types
+- ✅ **Assets Complete** - All images and icons included
+- ✅ **Responsive Design** - Mobile and desktop optimized
+
+### Core Functionality:
+- ✅ **Artist Cards** - Name, listeners, circular images
+- ✅ **Album Cards** - Title, artist, year, tracks, square covers
+- ✅ **Template Selection** - Interactive with live preview
+- ✅ **High-Quality Export** - 3x resolution PNG downloads
+- ✅ **Real-time Updates** - Preview changes as you type
 
 ### Testing URLs:
-- **Main App:** file:///Users/richard/Development/promocard-generator/dist/spotify-official.html
+- **Main App:** http://localhost:8000/dist/spotify-official.html
+- **Live Site:** https://promocard.liessum.dev/spotify-official.html
 - **Debug Test:** https://promocard.liessum.dev/debug-test.html
-- **Deploy Test:** https://promocard.liessum.dev/deploy-test.html
 
 ---
 
@@ -79,24 +124,28 @@ dist/
 1. **Commit Changes:**
    ```bash
    git add -A
-   git commit -m "🎨 COMPLETE REBUILD: Official Spotify Artist Promo Cards v3.0.0"
+   git commit -m "✨ ENHANCED: Added Album Cover Generation - v3.1.0 Artist & Album Edition"
    git push origin main
    ```
 
-2. **Test Live Site:**
-   - Verify https://promocard.liessum.dev/ loads correctly
-   - Test artist input and image upload
-   - Verify template selection works
-   - Test download functionality
+2. **Test Both Modes:**
+   - ✅ Verify artist card generation with templates
+   - ✅ Test album cover card generation
+   - ✅ Confirm mode switching functionality
+   - ✅ Validate image uploads for both modes
+   - ✅ Test template selection for both card types
+   - ✅ Verify download functionality with correct filenames
 
-3. **Optional Enhancements:**
-   - Spotify API integration for artist search
-   - Additional template variations
+3. **Optional Future Enhancements:**
+   - Spotify API integration for artist/album search
+   - Additional template variations for both modes
    - Social media size presets
-   - Advanced color customization
+   - Batch generation capabilities
+   - Custom color theme options
 
 ---
 
-**Status:** Ready for immediate deployment  
-**Quality:** Production-ready with authentic Spotify design  
-**Performance:** Optimized with Tailwind CSS and efficient JavaScript
+**Status:** Enhanced and ready for deployment  
+**Quality:** Production-ready with dual-mode functionality  
+**Performance:** Optimized with Tailwind CSS and efficient dual-mode JavaScript  
+**Features:** Complete artist and album cover promo card generation system
