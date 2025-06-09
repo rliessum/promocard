@@ -1,0 +1,241 @@
+🚀 LIGHTHOUSE REPORTS ANALYSIS
+Analyzing multiple Lighthouse reports...
+
+
+============================================================
+ANALYZING: lighthouse-report-current.html
+============================================================
+File size: 641831 characters
+Found 3 script tags
+Found JSON data with pattern 1
+
+=== LIGHTHOUSE AUDIT ANALYSIS ===
+
+URL: http://127.0.0.1:58244/
+Audit Time: 6/9/2025, 10:27:26 PM
+Lighthouse Version: 12.6.1
+User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/137.0.0.0 Safari/537.36
+
+--- CATEGORY SCORES ---
+Performance: 98/100 ✅
+Accessibility: 91/100 ✅
+Best Practices: 100/100 ✅
+SEO: 100/100 ✅
+
+--- PERFORMANCE DETAILS ---
+Overall Performance Score: 98/100
+
+--- CORE WEB VITALS ---
+Largest Contentful Paint (LCP): 1.9 s ✅
+First Contentful Paint (FCP): 1.9 s ⚠️
+Cumulative Layout Shift (CLS): 0.011 ✅
+Total Blocking Time (TBT): 0 ms ✅
+Speed Index: 1.9 s ✅
+Time to Interactive (TTI): 1.9 s ✅
+
+--- KEY OPPORTUNITIES ---
+Reduce unused JavaScript: 170ms potential savings
+Eliminate render-blocking resources: 969ms potential savings
+
+--- ACCESSIBILITY HIGHLIGHTS ---
+Accessibility Score: 91/100
+⚠️ Background and foreground colors do not have a sufficient contrast ratio.
+⚠️ Image elements have `[alt]` attributes
+⚠️ Links have a discernible name
+
+============================================================
+ANALYZING: lighthouse-report-new.html
+============================================================
+File size: 640353 characters
+Found 3 script tags
+Found JSON data with pattern 1
+
+=== LIGHTHOUSE AUDIT ANALYSIS ===
+
+URL: http://localhost:58244/
+Audit Time: 6/9/2025, 10:27:52 PM
+Lighthouse Version: 12.6.1
+User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/137.0.0.0 Safari/537.36
+
+--- CATEGORY SCORES ---
+Performance: 99/100 ✅
+Accessibility: 91/100 ✅
+Best Practices: 100/100 ✅
+SEO: 100/100 ✅
+
+--- PERFORMANCE DETAILS ---
+Overall Performance Score: 99/100
+
+--- CORE WEB VITALS ---
+Largest Contentful Paint (LCP): 1.6 s ✅
+First Contentful Paint (FCP): 1.6 s ✅
+Cumulative Layout Shift (CLS): 0.011 ✅
+Total Blocking Time (TBT): 0 ms ✅
+Speed Index: 1.6 s ✅
+Time to Interactive (TTI): 1.6 s ✅
+
+--- KEY OPPORTUNITIES ---
+Eliminate render-blocking resources: 640ms potential savings
+
+--- ACCESSIBILITY HIGHLIGHTS ---
+Accessibility Score: 91/100
+⚠️ Background and foreground colors do not have a sufficient contrast ratio.
+⚠️ Image elements have `[alt]` attributes
+⚠️ Links have a discernible name
+
+============================================================
+ANALYZING: lighthouse-report.html
+============================================================
+File size: 640756 characters
+Found 3 script tags
+Found JSON data with pattern 1
+
+=== LIGHTHOUSE AUDIT ANALYSIS ===
+
+URL: http://127.0.0.1:3000/
+Audit Time: 6/9/2025, 10:00:27 PM
+Lighthouse Version: 12.6.1
+User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/137.0.0.0 Safari/537.36
+
+--- CATEGORY SCORES ---
+Performance: 91/100 ✅
+Accessibility: 91/100 ✅
+Best Practices: 100/100 ✅
+SEO: 100/100 ✅
+
+--- PERFORMANCE DETAILS ---
+Overall Performance Score: 91/100
+
+--- CORE WEB VITALS ---
+Largest Contentful Paint (LCP): 2.7 s ⚠️
+First Contentful Paint (FCP): 2.7 s ⚠️
+Cumulative Layout Shift (CLS): 0.011 ✅
+Total Blocking Time (TBT): 0 ms ✅
+Speed Index: 2.7 s ✅
+Time to Interactive (TTI): 2.7 s ✅
+
+--- KEY OPPORTUNITIES ---
+Eliminate render-blocking resources: 1810ms potential savings
+
+--- ACCESSIBILITY HIGHLIGHTS ---
+Accessibility Score: 91/100
+⚠️ Background and foreground colors do not have a sufficient contrast ratio.
+⚠️ Image elements have `[alt]` attributes
+⚠️ Links have a discernible name
+
+============================================================
+ANALYZING: lighthouse-audit-20250609-222801.html
+============================================================
+File size: 641801 characters
+Found 3 script tags
+Found JSON data with pattern 1
+
+=== LIGHTHOUSE AUDIT ANALYSIS ===
+
+URL: http://localhost:58244/
+Audit Time: 6/9/2025, 10:28:03 PM
+Lighthouse Version: 12.6.1
+User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/137.0.0.0 Safari/537.36
+
+--- CATEGORY SCORES ---
+Performance: 98/100 ✅
+Accessibility: 91/100 ✅
+Best Practices: 100/100 ✅
+SEO: 100/100 ✅
+
+--- PERFORMANCE DETAILS ---
+Overall Performance Score: 98/100
+
+--- CORE WEB VITALS ---
+Largest Contentful Paint (LCP): 1.9 s ✅
+First Contentful Paint (FCP): 1.9 s ⚠️
+Cumulative Layout Shift (CLS): 0.011 ✅
+Total Blocking Time (TBT): 0 ms ✅
+Speed Index: 1.9 s ✅
+Time to Interactive (TTI): 1.9 s ✅
+
+--- KEY OPPORTUNITIES ---
+Reduce unused JavaScript: 170ms potential savings
+Eliminate render-blocking resources: 1007ms potential savings
+
+--- ACCESSIBILITY HIGHLIGHTS ---
+Accessibility Score: 91/100
+⚠️ Background and foreground colors do not have a sufficient contrast ratio.
+⚠️ Image elements have `[alt]` attributes
+⚠️ Links have a discernible name
+
+============================================================
+ANALYZING: lighthouse-audit-fresh.html
+============================================================
+File size: 641783 characters
+Found 3 script tags
+Found JSON data with pattern 1
+
+=== LIGHTHOUSE AUDIT ANALYSIS ===
+
+URL: http://127.0.0.1:58354/
+Audit Time: 6/9/2025, 10:28:45 PM
+Lighthouse Version: 12.6.1
+User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/137.0.0.0 Safari/537.36
+
+--- CATEGORY SCORES ---
+Performance: 98/100 ✅
+Accessibility: 91/100 ✅
+Best Practices: 100/100 ✅
+SEO: 100/100 ✅
+
+--- PERFORMANCE DETAILS ---
+Overall Performance Score: 98/100
+
+--- CORE WEB VITALS ---
+Largest Contentful Paint (LCP): 1.9 s ✅
+First Contentful Paint (FCP): 1.9 s ⚠️
+Cumulative Layout Shift (CLS): 0.011 ✅
+Total Blocking Time (TBT): 0 ms ✅
+Speed Index: 1.9 s ✅
+Time to Interactive (TTI): 1.9 s ✅
+
+--- KEY OPPORTUNITIES ---
+Reduce unused JavaScript: 170ms potential savings
+Eliminate render-blocking resources: 999ms potential savings
+
+--- ACCESSIBILITY HIGHLIGHTS ---
+Accessibility Score: 91/100
+⚠️ Background and foreground colors do not have a sufficient contrast ratio.
+⚠️ Image elements have `[alt]` attributes
+⚠️ Links have a discernible name
+
+============================================================
+📊 SUMMARY COMPARISON
+============================================================
+
+1. lighthouse-report-current.html
+   URL: http://127.0.0.1:58244/
+   Timestamp: 6/9/2025, 10:27:26 PM
+   Scores: performance: 98, accessibility: 91, best-practices: 100, seo: 100
+
+2. lighthouse-report-new.html
+   URL: http://localhost:58244/
+   Timestamp: 6/9/2025, 10:27:52 PM
+   Scores: performance: 99, accessibility: 91, best-practices: 100, seo: 100
+
+3. lighthouse-report.html
+   URL: http://127.0.0.1:3000/
+   Timestamp: 6/9/2025, 10:00:27 PM
+   Scores: performance: 91, accessibility: 91, best-practices: 100, seo: 100
+
+4. lighthouse-audit-20250609-222801.html
+   URL: http://localhost:58244/
+   Timestamp: 6/9/2025, 10:28:03 PM
+   Scores: performance: 98, accessibility: 91, best-practices: 100, seo: 100
+
+5. lighthouse-audit-fresh.html
+   URL: http://127.0.0.1:58354/
+   Timestamp: 6/9/2025, 10:28:45 PM
+   Scores: performance: 98, accessibility: 91, best-practices: 100, seo: 100
+
+--- AVERAGE SCORES ---
+performance: 97/100
+accessibility: 91/100
+best-practices: 100/100
+seo: 100/100
