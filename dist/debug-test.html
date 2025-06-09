@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Test - June 9, 2025</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            padding: 20px;
+        }
+        .status {
+            background: #1db954;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔧 Deployment Debug Test</h1>
+    <div class="status">✅ This page loads successfully</div>
+    <p><strong>Timestamp:</strong> June 9, 2025 - 17:15 CEST</p>
+    <p><strong>Test Purpose:</strong> Verify deployment is working</p>
+    
+    <h2>🔗 Navigation Tests</h2>
+    <ul>
+        <li><a href="index.html" style="color: #1db954;">→ Main App (index.html)</a></li>
+        <li><a href="test.html" style="color: #1db954;">→ Test Page</a></li>
+        <li><a href="deploy-test.html" style="color: #1db954;">→ Deploy Test</a></li>
+    </ul>
+    
+    <h2>📊 File Check</h2>
+    <script>
+        // Check if CSS loads
+        fetch('output.css')
+            .then(response => {
+                if (response.ok) {
+                    document.write('<div class="status">✅ CSS file accessible</div>');
+                } else {
+                    document.write('<div style="background: #e22134; padding: 10px; border-radius: 5px;">❌ CSS file not found</div>');
+                }
+            })
+            .catch(err => {
+                document.write('<div style="background: #e22134; padding: 10px; border-radius: 5px;">❌ CSS fetch error: ' + err.message + '</div>');
+            });
+    </script>
+</body>
+</html>
