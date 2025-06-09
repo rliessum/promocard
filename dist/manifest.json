@@ -1,0 +1,46 @@
+{
+  "name": "Artist Promo Cards - Professional Design Tool",
+  "short_name": "Promo Cards",
+  "description": "Create stunning promotional cards for your music with professional design tools",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#1DB954",
+  "orientation": "portrait",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png", 
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable-192.png",
+      "sizes": "192x192", 
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png", 
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["music", "graphics", "productivity"],
+  "lang": "en",
+  "dir": "ltr"
+}
