@@ -1,0 +1,11 @@
+.git
+.github
+.netlify
+node_modules
+docs
+deploy
+*.md
+.env
+.env.*
+*.log
+.DS_Store

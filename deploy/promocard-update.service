@@ -1,0 +1,19 @@
+[Unit]
+Description=promocard VPS update (ls-remote, build, health, rollback)
+Documentation=file:///opt/promocard/deploy/README.md
+After=network-online.target docker.service
+Wants=network-online.target
+Requires=docker.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/promocard
+ExecStart=/opt/promocard/deploy/update.sh
+TimeoutStartSec=15min
+Nice=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=promocard-update
+
+[Install]
+WantedBy=multi-user.target

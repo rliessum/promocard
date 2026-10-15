@@ -1,0 +1,14 @@
+[Unit]
+Description=promocard VPS update poll (every 45s)
+Documentation=file:///opt/promocard/deploy/README.md
+Requires=promocard-update.service
+
+[Timer]
+OnBootSec=60s
+OnUnitInactiveSec=45s
+AccuracySec=5s
+Persistent=true
+Unit=promocard-update.service
+
+[Install]
+WantedBy=timers.target
