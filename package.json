@@ -23,7 +23,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
