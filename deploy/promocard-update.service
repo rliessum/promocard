@@ -8,7 +8,7 @@ Requires=docker.service
 [Service]
 Type=oneshot
 WorkingDirectory=/opt/promocard
-ExecStart=/opt/promocard/deploy/update.sh
+ExecStart=/bin/bash /opt/promocard/deploy/update.sh
 TimeoutStartSec=15min
 Nice=10
 StandardOutput=journal
