@@ -6,13 +6,9 @@
   "scripts": {
     "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
     "watch:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "serve": "live-server dist --port=3000 --open",
-    "dev": "concurrently \"npm run watch:css\" \"npm run serve\"",
-    "build": "npm run build:css",
-    "netlify:dev": "netlify dev",
-    "netlify:build": "npm run build",
-    "netlify:deploy": "npm run build && netlify deploy",
-    "netlify:deploy:prod": "npm run build && netlify deploy --prod"
+    "serve": "python3 -m http.server 3000 --directory dist",
+    "dev": "npm run watch:css",
+    "build": "npm run build:css"
   },
   "keywords": [
     "promo",
@@ -23,11 +19,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.19"
   },
-  "devDependencies": {
-    "concurrently": "^8.2.2",
-    "live-server": "^1.2.2",
-    "netlify-cli": "^17.38.1"
+  "devDependencies": {},
+  "overrides": {
+    "postcss": ">=8.5.31",
+    "brace-expansion": ">=1.1.21",
+    "js-yaml": ">=4.3.2",
+    "nanoid": ">=3.3.18",
+    "source-map-js": ">=1.2.2",
+    "colord": ">=2.9.4",
+    "fast-uri": ">=3.1.9"
   }
 }
